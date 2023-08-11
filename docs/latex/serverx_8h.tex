@@ -1,0 +1,116 @@
+\hypertarget{serverx_8h}{}\doxysection{Файл /home/yvzayets/Документы/\+Git\+Hub/server\+\_\+thread-\/pattern-\//serverx.h}
+\label{serverx_8h}\index{/home/yvzayets/Документы/GitHub/server\_thread-\/pattern-\//serverx.h@{/home/yvzayets/Документы/GitHub/server\_thread-\/pattern-\//serverx.h}}
+
+
+Значения и константы для системы передачи сообщений.  
+
+
+{\ttfamily \#include \char`\"{}libtcp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}loger.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}timemanager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}safecout.\+h\char`\"{}}\newline
+Граф включаемых заголовочных файлов для serverx.\+h\+:
+% FIG 0
+\doxysubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpacket__t}{packet\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Структура пакета сообщения. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structmsgrec__t}{msgrec\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Структура посылаемого сообщения. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classXOUT}{XOUT}}
+\begin{DoxyCompactList}\small\item\em Класс для отправки данных в сокет и приема подтверждений. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classXIN}{XIN}}
+\begin{DoxyCompactList}\small\item\em Класс для приема данных и отправки подтверждений. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classServerXOI}{Server\+XOI}}
+\begin{DoxyCompactList}\small\item\em Класс сервера с асинхронным вводом \mbox{\hyperlink{classXIN}{XIN}} и выводом \mbox{\hyperlink{classXOUT}{XOUT}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{serverx_8h_a1fa483f61542552f69aaaeb420256660}\label{serverx_8h_a1fa483f61542552f69aaaeb420256660}} 
+\#define {\bfseries SERVERX\+\_\+H}
+\item 
+\mbox{\Hypertarget{serverx_8h_ad41b89d4eb6d63a0def5e5fd2a5ab326}\label{serverx_8h_ad41b89d4eb6d63a0def5e5fd2a5ab326}} 
+\#define {\bfseries T0}~20
+\item 
+\mbox{\Hypertarget{serverx_8h_ac16509a75e3d3fc46b9df1726be486ec}\label{serverx_8h_ac16509a75e3d3fc46b9df1726be486ec}} 
+\#define {\bfseries T1}~1000
+\item 
+\mbox{\Hypertarget{serverx_8h_a2e771aad39a6969f6514dc72378da5ae}\label{serverx_8h_a2e771aad39a6969f6514dc72378da5ae}} 
+\#define {\bfseries TSTAT}~5000
+\item 
+\mbox{\Hypertarget{serverx_8h_a259c2993ee45e06a4ea8150451a7a70e}\label{serverx_8h_a259c2993ee45e06a4ea8150451a7a70e}} 
+\#define {\bfseries T2}~5000
+\item 
+\mbox{\Hypertarget{serverx_8h_a51a44c31e7cb19a2becebdd2c70cdc60}\label{serverx_8h_a51a44c31e7cb19a2becebdd2c70cdc60}} 
+\#define {\bfseries MRSZ}~128
+\item 
+\mbox{\Hypertarget{serverx_8h_a24f52ac52d6e714cb04a5aa01be3bdd0}\label{serverx_8h_a24f52ac52d6e714cb04a5aa01be3bdd0}} 
+\#define {\bfseries BUF}~3700
+\item 
+\mbox{\Hypertarget{serverx_8h_ab8f7d3318c722f4a3a4f56850724a671}\label{serverx_8h_ab8f7d3318c722f4a3a4f56850724a671}} 
+\#define {\bfseries ACKSZ}~(sizeof(u\+\_\+int32\+\_\+t)+1)
+\item 
+\mbox{\Hypertarget{serverx_8h_a7ca3883ac8a7c1973bf443c4977efefb}\label{serverx_8h_a7ca3883ac8a7c1973bf443c4977efefb}} 
+\#define {\bfseries COOKIESZ}~sizeof(u\+\_\+int32\+\_\+t)
+\item 
+\mbox{\Hypertarget{serverx_8h_a6f6489887e08bff4887d0bc5dcf214d8}\label{serverx_8h_a6f6489887e08bff4887d0bc5dcf214d8}} 
+\#define {\bfseries ACK}~0x6
+\end{DoxyCompactItemize}
+\doxysubsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600b}{result}} \{ \newline
+\mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600ba54957cf47b2c20cda66ae848d2b3aacb}{Break}}
+, \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600ba45a66636ecd16b869e4aadd738813583}{Continue}}
+, \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600ba4dfd42ec49d09d8c6555c218301cc30f}{Error}}
+, \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600ba6d32c34708a0a3507c4bdb89219d650b}{True}}
+, \newline
+\mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600baf9d46b7804d93a4fcde88489a1b68c24}{False}}
+, \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600bac9d3e887722f2bc482bcca9d41c512af}{None}}
+ \}
+\begin{DoxyCompactList}\small\item\em Перечисление для результатов операций. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Значения и константы для системы передачи сообщений. 
+
+T0\+: Частота отправки сообщений в OUT. T1\+: Время ожидания первого подтверждения ACK (в мс). TSTAT\+: Интервал вывода статистики (в мс). T2\+: Интервал между пульсами по второму соединению (в мс). MRSZ\+: Максимальное число неподтвержденных сообщений для переключения на другую сеть. BUF\+: Максимальный размер буфера сообщения. ACKSZ\+: Размер пакета подтверждения ACK. COOKIESZ\+: Размер области номера пакета. ACK\+: Символ подтверждения ACK. 
+
+\doxysubsection{Перечисления}
+\mbox{\Hypertarget{serverx_8h_a937d4dd628a8858b443a399410d2600b}\label{serverx_8h_a937d4dd628a8858b443a399410d2600b}} 
+\index{serverx.h@{serverx.h}!result@{result}}
+\index{result@{result}!serverx.h@{serverx.h}}
+\doxysubsubsection{\texorpdfstring{result}{result}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600b}{result}}}
+
+
+
+Перечисление для результатов операций. 
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Break@{Break}!serverx.h@{serverx.h}}\index{serverx.h@{serverx.h}!Break@{Break}}}\mbox{\Hypertarget{serverx_8h_a937d4dd628a8858b443a399410d2600ba54957cf47b2c20cda66ae848d2b3aacb}\label{serverx_8h_a937d4dd628a8858b443a399410d2600ba54957cf47b2c20cda66ae848d2b3aacb}} 
+Break&Прервать операцию. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Continue@{Continue}!serverx.h@{serverx.h}}\index{serverx.h@{serverx.h}!Continue@{Continue}}}\mbox{\Hypertarget{serverx_8h_a937d4dd628a8858b443a399410d2600ba45a66636ecd16b869e4aadd738813583}\label{serverx_8h_a937d4dd628a8858b443a399410d2600ba45a66636ecd16b869e4aadd738813583}} 
+Continue&Продолжить операцию. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!serverx.h@{serverx.h}}\index{serverx.h@{serverx.h}!Error@{Error}}}\mbox{\Hypertarget{serverx_8h_a937d4dd628a8858b443a399410d2600ba4dfd42ec49d09d8c6555c218301cc30f}\label{serverx_8h_a937d4dd628a8858b443a399410d2600ba4dfd42ec49d09d8c6555c218301cc30f}} 
+Error&Ошибка. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{True@{True}!serverx.h@{serverx.h}}\index{serverx.h@{serverx.h}!True@{True}}}\mbox{\Hypertarget{serverx_8h_a937d4dd628a8858b443a399410d2600ba6d32c34708a0a3507c4bdb89219d650b}\label{serverx_8h_a937d4dd628a8858b443a399410d2600ba6d32c34708a0a3507c4bdb89219d650b}} 
+True&Истина. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{False@{False}!serverx.h@{serverx.h}}\index{serverx.h@{serverx.h}!False@{False}}}\mbox{\Hypertarget{serverx_8h_a937d4dd628a8858b443a399410d2600baf9d46b7804d93a4fcde88489a1b68c24}\label{serverx_8h_a937d4dd628a8858b443a399410d2600baf9d46b7804d93a4fcde88489a1b68c24}} 
+False&Ложь. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!serverx.h@{serverx.h}}\index{serverx.h@{serverx.h}!None@{None}}}\mbox{\Hypertarget{serverx_8h_a937d4dd628a8858b443a399410d2600bac9d3e887722f2bc482bcca9d41c512af}\label{serverx_8h_a937d4dd628a8858b443a399410d2600bac9d3e887722f2bc482bcca9d41c512af}} 
+None&Нет результата. \\
+\hline
+
+\end{DoxyEnumFields}

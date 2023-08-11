@@ -1,0 +1,188 @@
+\hypertarget{classServerXOI}{}\doxysection{Класс Server\+XOI}
+\label{classServerXOI}\index{ServerXOI@{ServerXOI}}
+
+
+Класс сервера с асинхронным вводом \mbox{\hyperlink{classXIN}{XIN}} и выводом \mbox{\hyperlink{classXOUT}{XOUT}}.  
+
+
+
+
+{\ttfamily \#include $<$serverx.\+h$>$}
+
+
+
+Граф наследования\+:Server\+XOI\+:
+% FIG 0
+
+
+Граф связей класса Server\+XOI\+:
+% FIG 1
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classServerXOI_aeacf871b8123a75ce51791ceae27b80d}\label{classServerXOI_aeacf871b8123a75ce51791ceae27b80d}} 
+{\bfseries Server\+XOI} (const char $\ast$ip, const char $\ast$out, const char $\ast$in, const char $\ast$name, \mbox{\hyperlink{classSafeCout}{Safe\+Cout}} $\ast$s)
+\item 
+void \mbox{\hyperlink{classServerXOI_a0d2bf378489ea5e3a55405fbea1c53c2}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Старт сервера. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServerXOI_a4d17cd60ec89d83e6dbca7150f29bba4}\label{classServerXOI_a4d17cd60ec89d83e6dbca7150f29bba4}} 
+void {\bfseries Stop} ()
+\item 
+void \mbox{\hyperlink{classServerXOI_a38327935a1a8a365d8c0a1b52ee19c35}{init\+\_\+cnt}} ()
+\begin{DoxyCompactList}\small\item\em Стоп сервера. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServerXOI_afba414a32f10546b2be2a5ad35bcc9cc}{Client\+Handler}} ()
+\begin{DoxyCompactList}\small\item\em Функция обработки клиента -\/ отправка и прием сообщений. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServerXOI_ae5d83e47a49b57931ca4c74a5a4b6a05}{statistic}} ()
+\begin{DoxyCompactList}\small\item\em Вывод статистики. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServerXOI_a07146acd78d7b3a0046760a53d278597}\label{classServerXOI_a07146acd78d7b3a0046760a53d278597}} 
+void {\bfseries Accept\+To\+Server} (int server, bool $\ast$sock\+\_\+flag, int $\ast$client)
+\begin{DoxyCompactList}\small\item\em Подключение клиента к сокету. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classServerXOI_a469f03d0e3f097a5cddd92157b5ab577}\label{classServerXOI_a469f03d0e3f097a5cddd92157b5ab577}} 
+\mbox{\hyperlink{classSafeCout}{Safe\+Cout}} $\ast$ {\bfseries scout}
+\begin{DoxyCompactList}\small\item\em Безопасный вывод сообщений. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classServerXOI_a5c9856dfc4535c995f62fd06a0f3f7c1}\label{classServerXOI_a5c9856dfc4535c995f62fd06a0f3f7c1}} 
+SOCKET {\bfseries server\+\_\+out}
+\begin{DoxyCompactList}\small\item\em Сокет сервера OUT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServerXOI_a8e830d0d297b038fca31e20085c86102}\label{classServerXOI_a8e830d0d297b038fca31e20085c86102}} 
+SOCKET {\bfseries server\+\_\+in}
+\begin{DoxyCompactList}\small\item\em Сокет сервера IN. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServerXOI_a22f34f92bb0e67784d6be07c7b8cdb79}\label{classServerXOI_a22f34f92bb0e67784d6be07c7b8cdb79}} 
+SOCKET {\bfseries client\+\_\+out}
+\begin{DoxyCompactList}\small\item\em Сокет клиента OUT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServerXOI_a89d4983287a274c048845da0b9812511}\label{classServerXOI_a89d4983287a274c048845da0b9812511}} 
+SOCKET {\bfseries client\+\_\+in}
+\begin{DoxyCompactList}\small\item\em Сокет клиента IN. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServerXOI_afe0602a0e6b05a10a7294e374bdfce3c}\label{classServerXOI_afe0602a0e6b05a10a7294e374bdfce3c}} 
+const char $\ast$ {\bfseries port\+\_\+out}
+\begin{DoxyCompactList}\small\item\em Порт OUT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServerXOI_a6816bd7b3c2e143cf15656ccd900b6e8}\label{classServerXOI_a6816bd7b3c2e143cf15656ccd900b6e8}} 
+const char $\ast$ {\bfseries port\+\_\+in}
+\begin{DoxyCompactList}\small\item\em Порт IN. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServerXOI_a21019600426a6db226807c24b3b33f59}\label{classServerXOI_a21019600426a6db226807c24b3b33f59}} 
+const char $\ast$ {\bfseries server\+\_\+name}
+\begin{DoxyCompactList}\small\item\em Имя сервера. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServerXOI_aa132dd7073c8cd397b9df000ff844d42}\label{classServerXOI_aa132dd7073c8cd397b9df000ff844d42}} 
+const char $\ast$ {\bfseries ip}
+\item 
+\mbox{\Hypertarget{classServerXOI_a07c23fc4e01a2766389ba9559bb7bce6}\label{classServerXOI_a07c23fc4e01a2766389ba9559bb7bce6}} 
+bool {\bfseries sock\+\_\+out\+\_\+flag} = false
+\begin{DoxyCompactList}\small\item\em Флаг подключения порта OUT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServerXOI_a072df61b21ed47b36fbbd8c8d6e97d50}\label{classServerXOI_a072df61b21ed47b36fbbd8c8d6e97d50}} 
+bool {\bfseries sock\+\_\+in\+\_\+flag} = false
+\begin{DoxyCompactList}\small\item\em Флаг подключения порта IN. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Дополнительные унаследованные члены}
+
+
+\doxysubsection{Подробное описание}
+Класс сервера с асинхронным вводом \mbox{\hyperlink{classXIN}{XIN}} и выводом \mbox{\hyperlink{classXOUT}{XOUT}}. 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classServerXOI_afba414a32f10546b2be2a5ad35bcc9cc}\label{classServerXOI_afba414a32f10546b2be2a5ad35bcc9cc}} 
+\index{ServerXOI@{ServerXOI}!ClientHandler@{ClientHandler}}
+\index{ClientHandler@{ClientHandler}!ServerXOI@{ServerXOI}}
+\doxysubsubsection{\texorpdfstring{ClientHandler()}{ClientHandler()}}
+{\footnotesize\ttfamily void Server\+XOI\+::\+Client\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Функция обработки клиента -\/ отправка и прием сообщений. 
+
+Обрабатывает клиента.
+
+Функция обрабатывает клиента, принимая и отправляя сообщения через сокеты fdxin и fdxout. Инициализирует маску на чтение для всех сокетов и максимум. В бесконечном цикле выполняет следующие действия\+:
+\begin{DoxyItemize}
+\item Формирует сообщение из случайных символов.
+\item Если отправка сообщения успешна, устанавливает таймер на повторную отправку через 20 мсек.
+\item Печатает статистику, если прошло TSTAT мсек.
+\item Устанавливает маску на чтение для всех сокетов и вызывает функцию tselect() для ожидания событий.
+\item Если tselect() возвращает отрицательное значение, выводит ошибку и продолжает цикл.
+\item Если tselect() возвращает 0, выводит сообщение о том, что нет событий, и завершает функцию.
+\item Если сокет fdxout готов для чтения, вызывает функцию \mbox{\hyperlink{classXOUT_ac8eeace268597c6fe6fb79d9b7a79116}{Recv\+Ack()}} для получения подтверждений от клиента порта OUT.
+\item Если сокет fdxin готов для чтения, вызывает функцию Echo() для получения данных от клиента и отправки подтверждений IN.
+\item Если функция Echo() возвращает результат Break, завершает функцию.
+\item Если функция Echo() возвращает результат Continue, продолжает цикл.
+\item Если функция Echo() возвращает результат True, копирует полученное сообщение в переменную buf.
+\item Закрывает сокеты client\+\_\+in и client\+\_\+out.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Возвращает}
+Отсутствует. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classServerXOI_a38327935a1a8a365d8c0a1b52ee19c35}\label{classServerXOI_a38327935a1a8a365d8c0a1b52ee19c35}} 
+\index{ServerXOI@{ServerXOI}!init\_cnt@{init\_cnt}}
+\index{init\_cnt@{init\_cnt}!ServerXOI@{ServerXOI}}
+\doxysubsubsection{\texorpdfstring{init\_cnt()}{init\_cnt()}}
+{\footnotesize\ttfamily void Server\+XOI\+::init\+\_\+cnt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Стоп сервера. 
+
+Обнуление счетчиков. \mbox{\Hypertarget{classServerXOI_a0d2bf378489ea5e3a55405fbea1c53c2}\label{classServerXOI_a0d2bf378489ea5e3a55405fbea1c53c2}} 
+\index{ServerXOI@{ServerXOI}!Start@{Start}}
+\index{Start@{Start}!ServerXOI@{ServerXOI}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Server\+XOI\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Старт сервера. 
+
+Запускает сервер.
+
+Функция запускает сервер на устройстве с заданным именем server\+\_\+name и IP-\/адресом ip. Создает сокеты для прослушивания портов OUT и IN. Устанавливает маску на чтение для всех сокетов и максимум. В бесконечном цикле выполняет следующие действия\+:
+\begin{DoxyItemize}
+\item Если флаг sock\+\_\+in\+\_\+flag и флаг sock\+\_\+out\+\_\+flag равны true, запускает функцию \mbox{\hyperlink{classServerXOI_afba414a32f10546b2be2a5ad35bcc9cc}{Client\+Handler()}}, передавая сокеты client\+\_\+in и client\+\_\+out.
+\item Устанавливает маску на чтение для всех сокетов и вызывает функцию tselect() для ожидания событий.
+\item Если tselect() возвращает отрицательное значение, выводит ошибку и продолжает цикл.
+\item Если tselect() возвращает 0, выводит сообщение о том, что нет событий, и завершает функцию.
+\item Если сокет server\+\_\+out готов для чтения и флаг sock\+\_\+out\+\_\+flag равен false, вызывает функцию \mbox{\hyperlink{classServerXOI_a07146acd78d7b3a0046760a53d278597}{Accept\+To\+Server()}} для принятия клиента на сокет server\+\_\+out и установки флага sock\+\_\+out\+\_\+flag в true.
+\item Если сокет server\+\_\+in готов для чтения и флаг sock\+\_\+in\+\_\+flag равен false, вызывает функцию \mbox{\hyperlink{classServerXOI_a07146acd78d7b3a0046760a53d278597}{Accept\+To\+Server()}} для принятия клиента на сокет server\+\_\+in и установки флага sock\+\_\+in\+\_\+flag в true.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Возвращает}
+Отсутствует. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classServerXOI_ae5d83e47a49b57931ca4c74a5a4b6a05}\label{classServerXOI_ae5d83e47a49b57931ca4c74a5a4b6a05}} 
+\index{ServerXOI@{ServerXOI}!statistic@{statistic}}
+\index{statistic@{statistic}!ServerXOI@{ServerXOI}}
+\doxysubsubsection{\texorpdfstring{statistic()}{statistic()}}
+{\footnotesize\ttfamily void Server\+XOI\+::statistic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Вывод статистики. 
+
+Выводит статистику и сохраняет в файл логов.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em safe\+Cout} & Объект \mbox{\hyperlink{classSafeCout}{Safe\+Cout}} для безопасного вывода. \\
+\hline
+{\em device} & Указатель на имя сетевой карты.\\
+\hline
+\end{DoxyParams}
+Этот метод выводит статистику и сохраняет ее в файл логов. Он использует переданный объект \mbox{\hyperlink{classSafeCout}{Safe\+Cout}} для безопасного вывода. Метод собирает данные статистики в двумерный вектор и передает его в функцию create\+Table для создания таблицы. Затем метод выводит данные статистики в файл логов с использованием функции loger. После вывода статистики, метод обнуляет счетчики.
+
+Пример использования\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classSafeCout}{SafeCout}} safeCout;}
+\DoxyCodeLine{\textcolor{keywordtype}{char}* device = \textcolor{stringliteral}{"{}eth0"{}};}
+\DoxyCodeLine{Message message;}
+\DoxyCodeLine{message.statistic(safeCout, device);}
+
+\end{DoxyCode}
+
+
+В этом примере создается объект \mbox{\hyperlink{classSafeCout}{Safe\+Cout}} для безопасного вывода, указывается имя сетевой карты и создается объект класса Message. Метод statistic используется для вывода статистики и сохранения ее в файл логов. Сначала данные статистики собираются в двумерный вектор, затем создается таблица с помощью функции create\+Table, и данные выводятся с использованием объекта \mbox{\hyperlink{classSafeCout}{Safe\+Cout}}. Затем метод выводит данные статистики в файл логов с использованием функции loger. Наконец, метод обнуляет счетчики с помощью метода init\+\_\+cnt. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+/home/yvzayets/Документы/\+Git\+Hub/server\+\_\+thread-\/pattern-\//\mbox{\hyperlink{serverx_8h}{serverx.\+h}}\item 
+/home/yvzayets/Документы/\+Git\+Hub/server\+\_\+thread-\/pattern-\//serverx.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Server TCP Multithread CPP: Исходный файл /home/yvzayets/Документы/GitHub/server_thread-pattern-/safecout.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Server TCP Multithread CPP<span id="projectnumber">&#160;0.8</span>
+   </div>
+   <div id="projectbrief">Многопоточный Ассинхронный TCP Сервер</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_deea9ac2ebb701b26350058d0b80c84f.html">Документы</a></li><li class="navelem"><a class="el" href="dir_0dea5837734f1def49efb6e0f46ce015.html">GitHub</a></li><li class="navelem"><a class="el" href="dir_26f4ca58c8766c6af4695911a782f16e.html">server_thread-pattern-</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">safecout.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef SAFECOUT_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define SAFECOUT_H</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;condition_variable&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;locale&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;codecvt&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">extern</span> std::mutex mtxPrintF;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">void</span> safePrintf(<span class="keyword">const</span> <span class="keywordtype">char</span>* format, ...);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">extern</span> std::mutex coutMutex;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classSafeCout.html">   53</a></span><span class="keyword">class </span><a class="code hl_class" href="classSafeCout.html">SafeCout</a> {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_class" href="classSafeCout.html">SafeCout</a>(){};</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_class" href="classSafeCout.html">~SafeCout</a>(){};</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classSafeCout.html#a20f3333872b13e3024f176bb985212c5">   69</a></span>    <a class="code hl_class" href="classSafeCout.html">SafeCout</a>&amp; <a class="code hl_function" href="classSafeCout.html#a20f3333872b13e3024f176bb985212c5">operator&lt;&lt;</a>(<span class="keyword">const</span> T&amp; value) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        std::lock_guard&lt;std::mutex&gt; lock(coutMutex);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        std::cout &lt;&lt; value;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classSafeCout.html#abbba909a2dde4b6d052260467b366a3e">   85</a></span>    <a class="code hl_class" href="classSafeCout.html">SafeCout</a>&amp; <a class="code hl_function" href="classSafeCout.html#abbba909a2dde4b6d052260467b366a3e">operator&lt;&lt;</a>(<span class="keyword">const</span> std::string&amp; value) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        std::lock_guard&lt;std::mutex&gt; lock(coutMutex);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        std::cout &lt;&lt; value;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classSafeCout.html#a061d4e4d0644ddcce338624792937fcf">  101</a></span>    <a class="code hl_class" href="classSafeCout.html">SafeCout</a>&amp; <a class="code hl_function" href="classSafeCout.html#a061d4e4d0644ddcce338624792937fcf">operator&lt;&lt;</a>(std::ostream&amp; (*manipulator)(std::ostream&amp;)) {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        std::lock_guard&lt;std::mutex&gt; lock(coutMutex);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        manipulator(std::cout);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordtype">void</span> notifyAll() {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        std::lock_guard&lt;std::mutex&gt; lock(notifyMutex);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        notified = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        condVar.notify_all();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordtype">void</span> wait() {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        std::unique_lock&lt;std::mutex&gt; lock(notifyMutex);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        condVar.wait(lock, [<span class="keyword">this</span>] { <span class="keywordflow">return</span> notified; });</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        notified = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    std::mutex coutMutex;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    std::mutex notifyMutex;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    std::condition_variable condVar;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordtype">bool</span> notified = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>};</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="keywordtype">void</span> createTable(<span class="keyword">const</span> std::vector&lt;std::vector&lt;std::string&gt;&gt;&amp; data, <a class="code hl_class" href="classSafeCout.html">SafeCout</a>&amp; safeCout);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="preprocessor">#endif </span><span class="comment">// SAFECOUT_H</span></div>
+<div class="ttc" id="aclassSafeCout_html"><div class="ttname"><a href="classSafeCout.html">SafeCout</a></div><div class="ttdef"><b>Definition:</b> safecout.h:53</div></div>
+<div class="ttc" id="aclassSafeCout_html_a061d4e4d0644ddcce338624792937fcf"><div class="ttname"><a href="classSafeCout.html#a061d4e4d0644ddcce338624792937fcf">SafeCout::operator&lt;&lt;</a></div><div class="ttdeci">SafeCout &amp; operator&lt;&lt;(std::ostream &amp;(*manipulator)(std::ostream &amp;))</div><div class="ttdef"><b>Definition:</b> safecout.h:101</div></div>
+<div class="ttc" id="aclassSafeCout_html_a20f3333872b13e3024f176bb985212c5"><div class="ttname"><a href="classSafeCout.html#a20f3333872b13e3024f176bb985212c5">SafeCout::operator&lt;&lt;</a></div><div class="ttdeci">SafeCout &amp; operator&lt;&lt;(const T &amp;value)</div><div class="ttdef"><b>Definition:</b> safecout.h:69</div></div>
+<div class="ttc" id="aclassSafeCout_html_abbba909a2dde4b6d052260467b366a3e"><div class="ttname"><a href="classSafeCout.html#abbba909a2dde4b6d052260467b366a3e">SafeCout::operator&lt;&lt;</a></div><div class="ttdeci">SafeCout &amp; operator&lt;&lt;(const std::string &amp;value)</div><div class="ttdef"><b>Definition:</b> safecout.h:85</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

@@ -1,0 +1,115 @@
+\hypertarget{classThreadPool}{}\doxysection{Класс Thread\+Pool}
+\label{classThreadPool}\index{ThreadPool@{ThreadPool}}
+
+
+{\ttfamily \#include $<$thread\+\_\+pool.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classThreadPool_ac291710e33dbbed96ee20711080d506d}{Thread\+Pool}} (size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Конструктор класса \mbox{\hyperlink{classThreadPool}{Thread\+Pool}}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class F , class... Args$>$ }\\auto \mbox{\hyperlink{classThreadPool_ad47c34f4a3bf29bf96e6ddcfa472ddf3}{add\+\_\+task}} (F \&\&f, Args \&\&...args) -\/$>$ std\+::future$<$ typename std\+::result\+\_\+of$<$ F(Args...)$>$\+::type $>$
+\item 
+\mbox{\hyperlink{classThreadPool_a44d3d2ab618970605e684efc216655eb}{$\sim$\+Thread\+Pool}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс \mbox{\hyperlink{classThreadPool}{Thread\+Pool}} представляет пул потоков для выполнения задач.
+
+Пул потоков позволяет эффективно распределять задачи между несколькими потоками. Класс \mbox{\hyperlink{classThreadPool}{Thread\+Pool}} обеспечивает управление потоками, добавление задач в очередь и их выполнение. 
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classThreadPool_ac291710e33dbbed96ee20711080d506d}\label{classThreadPool_ac291710e33dbbed96ee20711080d506d}} 
+\index{ThreadPool@{ThreadPool}!ThreadPool@{ThreadPool}}
+\index{ThreadPool@{ThreadPool}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{ThreadPool()}{ThreadPool()}}
+{\footnotesize\ttfamily Thread\+Pool\+::\+Thread\+Pool (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{threads }\end{DoxyParamCaption})}
+
+
+
+Конструктор класса \mbox{\hyperlink{classThreadPool}{Thread\+Pool}}. 
+
+Конструктор класса \mbox{\hyperlink{classThreadPool}{Thread\+Pool}}.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em size} & Количество потоков в пуле.\\
+\hline
+{\em threads} & Количество потоков в пуле.\\
+\hline
+\end{DoxyParams}
+Конструктор инициализирует пул потоков с заданным количеством потоков. В каждом потоке выполняется бесконечный цикл, в котором извлекается задача из очереди {\ttfamily tasks} и выполняется с помощью указателя на функцию.
+
+Если пул остановлен (флаг {\ttfamily stop} установлен в {\ttfamily true}) и очередь задач {\ttfamily tasks} пуста, поток завершает свою работу и выходит из цикла. \mbox{\Hypertarget{classThreadPool_a44d3d2ab618970605e684efc216655eb}\label{classThreadPool_a44d3d2ab618970605e684efc216655eb}} 
+\index{ThreadPool@{ThreadPool}!````~ThreadPool@{$\sim$ThreadPool}}
+\index{````~ThreadPool@{$\sim$ThreadPool}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{$\sim$ThreadPool()}{~ThreadPool()}}
+{\footnotesize\ttfamily Thread\+Pool\+::$\sim$\+Thread\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Деструктор класса \mbox{\hyperlink{classThreadPool}{Thread\+Pool}}.
+
+Останавливает выполнение всех потоков пула и освобождает ресурсы.
+
+Деструктор класса \mbox{\hyperlink{classThreadPool}{Thread\+Pool}}.
+
+Останавливает выполнение всех потоков пула и освобождает ресурсы.
+
+Данный деструктор останавливает выполнение всех потоков пула. Сначала флаг {\ttfamily stop} устанавливается в значение {\ttfamily true} с помощью {\ttfamily std\+::unique\+\_\+lock} и {\ttfamily std\+::mutex}. Это гарантирует, что никакие новые задачи не будут добавлены в очередь после этого момента.
+
+Затем вызывается {\ttfamily cond.\+notify\+\_\+all()}, чтобы уведомить все потоки пула о необходимости завершить выполнение. Это позволяет потокам выйти из ожидания и проверить флаг {\ttfamily stop} для определения, нужно ли им завершить выполнение.
+
+После этого, в цикле происходит ожидание завершения всех потоков с помощью {\ttfamily thread.\+join()}. Это гарантирует, что все потоки будут завершены и ресурсы будут корректно освобождены.
+
+Таким образом, деструктор освобождает ресурсы и завершает работу пула потоков. 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classThreadPool_ad47c34f4a3bf29bf96e6ddcfa472ddf3}\label{classThreadPool_ad47c34f4a3bf29bf96e6ddcfa472ddf3}} 
+\index{ThreadPool@{ThreadPool}!add\_task@{add\_task}}
+\index{add\_task@{add\_task}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{add\_task()}{add\_task()}}
+{\footnotesize\ttfamily template$<$class F , class... Args$>$ \\
+auto Thread\+Pool\+::add\+\_\+task (\begin{DoxyParamCaption}\item[{F \&\&}]{f,  }\item[{Args \&\&...}]{args }\end{DoxyParamCaption}) -\/$>$ std\+::future$<$typename std\+::result\+\_\+of$<$F(Args...)$>$\+::type$>$     \hspace{0.3cm}{\ttfamily [inline]}}
+
+Добавляет задачу в очередь пула потоков.
+
+
+\begin{DoxyTemplParams}{Параметры шаблона}
+{\em F} & Тип функции задачи. \\
+\hline
+{\em Args} & Типы аргументов функции задачи. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Аргументы}
+{\em f} & Функция задачи. \\
+\hline
+{\em args} & Аргументы функции задачи. Добавляет задачу в очередь пула потоков.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Параметры шаблона}
+{\em F} & Тип функции задачи. \\
+\hline
+{\em Args} & Типы аргументов функции задачи. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Аргументы}
+{\em f} & Функция задачи. \\
+\hline
+{\em args} & Аргументы функции задачи. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если добавление в очередь остановлено.\\
+\hline
+\end{DoxyExceptions}
+Данная функция принимает функцию задачи {\ttfamily f} и ее аргументы {\ttfamily args}. Она создает упакованную задачу {\ttfamily task} с помощью {\ttfamily std\+::packaged\+\_\+task}, используя {\ttfamily std\+::bind} для связывания функции {\ttfamily f} с аргументами {\ttfamily args}. Затем создается лямбда-\/функция {\ttfamily func}, которая вызывает {\ttfamily task}. Задача {\ttfamily func} помещается в очередь {\ttfamily tasks} с помощью {\ttfamily emplace}. Если флаг {\ttfamily stop} установлен в {\ttfamily true}, выбрасывается исключение {\ttfamily std\+::runtime\+\_\+error}. В конце, вызывается {\ttfamily cond.\+notify\+\_\+one()}, чтобы уведомить один из потоков пула о наличии новой задачи. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+/home/yvzayets/Документы/\+Git\+Hub/server\+\_\+thread-\/pattern-\//thread\+\_\+pool.\+h\item 
+/home/yvzayets/Документы/\+Git\+Hub/server\+\_\+thread-\/pattern-\//thread\+\_\+pool.\+cpp\end{DoxyCompactItemize}

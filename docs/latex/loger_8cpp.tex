@@ -1,0 +1,77 @@
+\hypertarget{loger_8cpp}{}\doxysection{Файл /home/yvzayets/Документы/\+Git\+Hub/server\+\_\+thread-\/pattern-\//loger.cpp}
+\label{loger_8cpp}\index{/home/yvzayets/Документы/GitHub/server\_thread-\/pattern-\//loger.cpp@{/home/yvzayets/Документы/GitHub/server\_thread-\/pattern-\//loger.cpp}}
+
+
+Функции для логирования с использованием переменного числа аргументов и вывода текущей даты и времени.  
+
+
+{\ttfamily \#include \char`\"{}loger.\+h\char`\"{}}\newline
+Граф включаемых заголовочных файлов для loger.\+cpp\+:
+% FIG 0
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{loger_8cpp_ae1e2f4ed02612d2c7853e99010f04bef}{loger}} (Log\+Type type, int er, const char $\ast$msg,...)
+\begin{DoxyCompactList}\small\item\em Функция для логирования с использованием переменного числа аргументов. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{loger_8cpp_aac68f1c0067dfc10c52eac5003181632}{print\+\_\+time}} (FILE $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Функция для вывода текущей даты и времени. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{loger_8cpp_aabae44b4cef51e20be1003eaaab46683}\label{loger_8cpp_aabae44b4cef51e20be1003eaaab46683}} 
+std\+::mutex {\bfseries mtx\+Log}
+\begin{DoxyCompactList}\small\item\em Мьютекс для синхронизации доступа к файлу логирования. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{loger_8cpp_a820cb1079d0784bd7f0824a7fe0326c5}\label{loger_8cpp_a820cb1079d0784bd7f0824a7fe0326c5}} 
+std\+::mutex {\bfseries mtx\+Time}
+\begin{DoxyCompactList}\small\item\em Мьютекс для синхронизации вывода текущего времени. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{loger_8cpp_af4c7d12a8e219885f55fa917dd6e64dd}\label{loger_8cpp_af4c7d12a8e219885f55fa917dd6e64dd}} 
+std\+::condition\+\_\+variable {\bfseries cond\+Log}
+\begin{DoxyCompactList}\small\item\em Условная переменная для оповещения о завершении записи в файл логирования. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Функции для логирования с использованием переменного числа аргументов и вывода текущей даты и времени. 
+
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{loger_8cpp_ae1e2f4ed02612d2c7853e99010f04bef}\label{loger_8cpp_ae1e2f4ed02612d2c7853e99010f04bef}} 
+\index{loger.cpp@{loger.cpp}!loger@{loger}}
+\index{loger@{loger}!loger.cpp@{loger.cpp}}
+\doxysubsubsection{\texorpdfstring{loger()}{loger()}}
+{\footnotesize\ttfamily void loger (\begin{DoxyParamCaption}\item[{Log\+Type}]{type,  }\item[{int}]{er,  }\item[{const char $\ast$}]{msg,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Функция для логирования с использованием переменного числа аргументов. 
+
+Функция для логирования сообщений.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em type} & Тип лога (DEBUG, ERROR, INFO, WARNING). \\
+\hline
+{\em er} & Код ошибки (если есть). \\
+\hline
+{\em msg} & Форматированное сообщение для лога. \\
+\hline
+{\em ...} & Дополнительные аргументы (переменное число параметров). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{loger_8cpp_aac68f1c0067dfc10c52eac5003181632}\label{loger_8cpp_aac68f1c0067dfc10c52eac5003181632}} 
+\index{loger.cpp@{loger.cpp}!print\_time@{print\_time}}
+\index{print\_time@{print\_time}!loger.cpp@{loger.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_time()}{print\_time()}}
+{\footnotesize\ttfamily void print\+\_\+time (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{fd }\end{DoxyParamCaption})}
+
+
+
+Функция для вывода текущей даты и времени. 
+
+Выводит текущее время в формате \char`\"{}Дата ГГГГ-\/ММ-\/ДД Время ЧЧ\+:ММ\+:СС\char`\"{} в указанный файл.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em fd} & Указатель на файл, в который будет записано время. \\
+\hline
+\end{DoxyParams}

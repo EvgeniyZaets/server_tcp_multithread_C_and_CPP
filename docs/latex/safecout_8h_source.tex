@@ -1,0 +1,70 @@
+\hypertarget{safecout_8h_source}{}\doxysection{safecout.\+h}
+\label{safecout_8h_source}\index{/home/yvzayets/Документы/GitHub/server\_thread-\/pattern-\//safecout.h@{/home/yvzayets/Документы/GitHub/server\_thread-\/pattern-\//safecout.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef SAFECOUT\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define SAFECOUT\_H}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <condition\_variable>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <locale>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <codecvt>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{extern} std::mutex mtxPrintF;}
+\DoxyCodeLine{32 \textcolor{keywordtype}{void} safePrintf(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* format, ...);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{extern} std::mutex coutMutex;}
+\DoxyCodeLine{53 \textcolor{keyword}{class }\mbox{\hyperlink{classSafeCout}{SafeCout}} \{}
+\DoxyCodeLine{54 \textcolor{keyword}{public}:}
+\DoxyCodeLine{55     \mbox{\hyperlink{classSafeCout}{SafeCout}}()\{\};}
+\DoxyCodeLine{56     \mbox{\hyperlink{classSafeCout}{\string~SafeCout}}()\{\};}
+\DoxyCodeLine{68     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{69     \mbox{\hyperlink{classSafeCout}{SafeCout}}\& \mbox{\hyperlink{classSafeCout_a20f3333872b13e3024f176bb985212c5}{operator<<}}(\textcolor{keyword}{const} T\& value) \{}
+\DoxyCodeLine{70         std::lock\_guard<std::mutex> lock(coutMutex);}
+\DoxyCodeLine{71         std::cout << value;}
+\DoxyCodeLine{72         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{73     \}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{85     \mbox{\hyperlink{classSafeCout}{SafeCout}}\& \mbox{\hyperlink{classSafeCout_abbba909a2dde4b6d052260467b366a3e}{operator<<}}(\textcolor{keyword}{const} std::string\& value) \{}
+\DoxyCodeLine{86         std::lock\_guard<std::mutex> lock(coutMutex);}
+\DoxyCodeLine{87         std::cout << value;}
+\DoxyCodeLine{88         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{101     \mbox{\hyperlink{classSafeCout}{SafeCout}}\& \mbox{\hyperlink{classSafeCout_a061d4e4d0644ddcce338624792937fcf}{operator<<}}(std::ostream\& (*manipulator)(std::ostream\&)) \{}
+\DoxyCodeLine{102         std::lock\_guard<std::mutex> lock(coutMutex);}
+\DoxyCodeLine{103         manipulator(std::cout);}
+\DoxyCodeLine{104         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{105     \}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{keywordtype}{void} notifyAll() \{}
+\DoxyCodeLine{108         std::lock\_guard<std::mutex> lock(notifyMutex);}
+\DoxyCodeLine{109         notified = \textcolor{keyword}{true};}
+\DoxyCodeLine{110         condVar.notify\_all();}
+\DoxyCodeLine{111     \}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{keywordtype}{void} wait() \{}
+\DoxyCodeLine{114         std::unique\_lock<std::mutex> lock(notifyMutex);}
+\DoxyCodeLine{115         condVar.wait(lock, [\textcolor{keyword}{this}] \{ \textcolor{keywordflow}{return} notified; \});}
+\DoxyCodeLine{116         notified = \textcolor{keyword}{false};}
+\DoxyCodeLine{117     \}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{keyword}{private}:}
+\DoxyCodeLine{121     std::mutex coutMutex;}
+\DoxyCodeLine{122     std::mutex notifyMutex;}
+\DoxyCodeLine{123     std::condition\_variable condVar;}
+\DoxyCodeLine{124     \textcolor{keywordtype}{bool} notified = \textcolor{keyword}{false};}
+\DoxyCodeLine{125 \};}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{157 \textcolor{keywordtype}{void} createTable(\textcolor{keyword}{const} std::vector<std::vector<std::string>>\& data, \mbox{\hyperlink{classSafeCout}{SafeCout}}\& safeCout);}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SAFECOUT\_H}}
+
+\end{DoxyCode}

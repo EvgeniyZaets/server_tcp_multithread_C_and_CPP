@@ -1,0 +1,22 @@
+\hypertarget{skel_8h_source}{}\doxysection{skel.\+h}
+\label{skel_8h_source}\index{/home/yvzayets/Документы/GitHub/server\_thread-\/pattern-\//skel.h@{/home/yvzayets/Документы/GitHub/server\_thread-\/pattern-\//skel.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef SKEL\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define SKEL\_H}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define INIT()          ( program\_name = \(\backslash\)}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{                        strrchr( argv[ 0 ], '/' ) ) ? \(\backslash\)}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{                        program\_name++ : \(\backslash\)}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{                        ( program\_name = argv[ 0 ] )}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define set\_errno(e)    errno = ( e )}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define isvalidsock(s)  ( ( s ) >= 0 )}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{41 \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} SOCKET;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SKEL\_H}}
+
+\end{DoxyCode}

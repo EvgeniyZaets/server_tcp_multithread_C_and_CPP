@@ -1,0 +1,33 @@
+\hypertarget{structpacket__t}{}\doxysection{Структура packet\+\_\+t}
+\label{structpacket__t}\index{packet\_t@{packet\_t}}
+
+
+Структура пакета сообщения.  
+
+
+
+
+{\ttfamily \#include $<$serverx.\+h$>$}
+
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structpacket__t_ac2201fcd087426611a6513900a4be272}\label{structpacket__t_ac2201fcd087426611a6513900a4be272}} 
+u\+\_\+int32\+\_\+t {\bfseries len}
+\begin{DoxyCompactList}\small\item\em Длина признака и данных -\/ удаленный хост может использовать это поле для разбиения на отдельные записи. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structpacket__t_a2f487fd42c67c5aa95dd9a5bab5fe888}\label{structpacket__t_a2f487fd42c67c5aa95dd9a5bab5fe888}} 
+u\+\_\+int32\+\_\+t {\bfseries cookie}
+\begin{DoxyCompactList}\small\item\em Признак сообщения -\/ это 32-\/битный порядковый номер сообщения. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structpacket__t_a16aab1074611d73ecd953f4b7b94c9bf}\label{structpacket__t_a16aab1074611d73ecd953f4b7b94c9bf}} 
+char {\bfseries buf} \mbox{[}BUF\mbox{]}
+\begin{DoxyCompactList}\small\item\em Сообщение. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Структура пакета сообщения. 
+
+Эта структура представляет собой пакет сообщения, содержащий длину признака и данных, признак сообщения и само сообщение. Поле {\ttfamily len} используется для указания длины признака и данных, и удаленный хост может использовать это поле для разбиения на отдельные записи. Поле {\ttfamily cookie} является 32-\/битным порядковым номером сообщения. Поле {\ttfamily buf} представляет собой буфер для хранения сообщения. 
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+/home/yvzayets/Документы/\+Git\+Hub/server\+\_\+thread-\/pattern-\//\mbox{\hyperlink{serverx_8h}{serverx.\+h}}\end{DoxyCompactItemize}

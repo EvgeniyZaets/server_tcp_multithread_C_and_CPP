@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Server TCP Multithread CPP: Файл /home/yvzayets/Документы/GitHub/server_thread-pattern-/serverx.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Server TCP Multithread CPP<span id="projectnumber">&#160;0.8</span>
+   </div>
+   <div id="projectbrief">Многопоточный Ассинхронный TCP Сервер</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_deea9ac2ebb701b26350058d0b80c84f.html">Документы</a></li><li class="navelem"><a class="el" href="dir_0dea5837734f1def49efb6e0f46ce015.html">GitHub</a></li><li class="navelem"><a class="el" href="dir_26f4ca58c8766c6af4695911a782f16e.html">server_thread-pattern-</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#define-members">Макросы</a> &#124;
+<a href="#enum-members">Перечисления</a>  </div>
+  <div class="headertitle"><div class="title">Файл serverx.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Значения и константы для системы передачи сообщений.  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &quot;libtcp.h&quot;</code><br />
+<code>#include &quot;loger.h&quot;</code><br />
+<code>#include &quot;timemanager.h&quot;</code><br />
+<code>#include &quot;safecout.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для serverx.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="serverx_8h__incl.png" border="0" usemap="#a_2home_2yvzayets_2_xD0_x94_xD0_xBE_xD0_xBA_xD1_x83_xD0_xBC_xD0_xB5_xD0_xBD_xD1_x82_xD1_x8B_2GitHub_2server__thread-pattern-_2serverx_8h" alt=""/></div>
+</div>
+</div>
+<p><a href="serverx_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpacket__t.html">packet_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Структура пакета сообщения.  <a href="structpacket__t.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmsgrec__t.html">msgrec_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Структура посылаемого сообщения.  <a href="structmsgrec__t.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classXOUT.html">XOUT</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Класс для отправки данных в сокет и приема подтверждений.  <a href="classXOUT.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classXIN.html">XIN</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Класс для приема данных и отправки подтверждений.  <a href="classXIN.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerXOI.html">ServerXOI</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Класс сервера с асинхронным вводом <a class="el" href="classXIN.html" title="Класс для приема данных и отправки подтверждений.">XIN</a> и выводом <a class="el" href="classXOUT.html" title="Класс для отправки данных в сокет и приема подтверждений.">XOUT</a>.  <a href="classServerXOI.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Макросы</h2></td></tr>
+<tr class="memitem:a1fa483f61542552f69aaaeb420256660"><td class="memItemLeft" align="right" valign="top"><a id="a1fa483f61542552f69aaaeb420256660" name="a1fa483f61542552f69aaaeb420256660"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SERVERX_H</b></td></tr>
+<tr class="separator:a1fa483f61542552f69aaaeb420256660"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad41b89d4eb6d63a0def5e5fd2a5ab326"><td class="memItemLeft" align="right" valign="top"><a id="ad41b89d4eb6d63a0def5e5fd2a5ab326" name="ad41b89d4eb6d63a0def5e5fd2a5ab326"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>T0</b>&#160;&#160;&#160;20</td></tr>
+<tr class="separator:ad41b89d4eb6d63a0def5e5fd2a5ab326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac16509a75e3d3fc46b9df1726be486ec"><td class="memItemLeft" align="right" valign="top"><a id="ac16509a75e3d3fc46b9df1726be486ec" name="ac16509a75e3d3fc46b9df1726be486ec"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>T1</b>&#160;&#160;&#160;1000</td></tr>
+<tr class="separator:ac16509a75e3d3fc46b9df1726be486ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e771aad39a6969f6514dc72378da5ae"><td class="memItemLeft" align="right" valign="top"><a id="a2e771aad39a6969f6514dc72378da5ae" name="a2e771aad39a6969f6514dc72378da5ae"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TSTAT</b>&#160;&#160;&#160;5000</td></tr>
+<tr class="separator:a2e771aad39a6969f6514dc72378da5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a259c2993ee45e06a4ea8150451a7a70e"><td class="memItemLeft" align="right" valign="top"><a id="a259c2993ee45e06a4ea8150451a7a70e" name="a259c2993ee45e06a4ea8150451a7a70e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>T2</b>&#160;&#160;&#160;5000</td></tr>
+<tr class="separator:a259c2993ee45e06a4ea8150451a7a70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51a44c31e7cb19a2becebdd2c70cdc60"><td class="memItemLeft" align="right" valign="top"><a id="a51a44c31e7cb19a2becebdd2c70cdc60" name="a51a44c31e7cb19a2becebdd2c70cdc60"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MRSZ</b>&#160;&#160;&#160;128</td></tr>
+<tr class="separator:a51a44c31e7cb19a2becebdd2c70cdc60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24f52ac52d6e714cb04a5aa01be3bdd0"><td class="memItemLeft" align="right" valign="top"><a id="a24f52ac52d6e714cb04a5aa01be3bdd0" name="a24f52ac52d6e714cb04a5aa01be3bdd0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BUF</b>&#160;&#160;&#160;3700</td></tr>
+<tr class="separator:a24f52ac52d6e714cb04a5aa01be3bdd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8f7d3318c722f4a3a4f56850724a671"><td class="memItemLeft" align="right" valign="top"><a id="ab8f7d3318c722f4a3a4f56850724a671" name="ab8f7d3318c722f4a3a4f56850724a671"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ACKSZ</b>&#160;&#160;&#160;(sizeof(u_int32_t)+1)</td></tr>
+<tr class="separator:ab8f7d3318c722f4a3a4f56850724a671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ca3883ac8a7c1973bf443c4977efefb"><td class="memItemLeft" align="right" valign="top"><a id="a7ca3883ac8a7c1973bf443c4977efefb" name="a7ca3883ac8a7c1973bf443c4977efefb"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>COOKIESZ</b>&#160;&#160;&#160;sizeof(u_int32_t)</td></tr>
+<tr class="separator:a7ca3883ac8a7c1973bf443c4977efefb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f6489887e08bff4887d0bc5dcf214d8"><td class="memItemLeft" align="right" valign="top"><a id="a6f6489887e08bff4887d0bc5dcf214d8" name="a6f6489887e08bff4887d0bc5dcf214d8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ACK</b>&#160;&#160;&#160;0x6</td></tr>
+<tr class="separator:a6f6489887e08bff4887d0bc5dcf214d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Перечисления</h2></td></tr>
+<tr class="memitem:a937d4dd628a8858b443a399410d2600b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serverx_8h.html#a937d4dd628a8858b443a399410d2600b">result</a> { <br />
+&#160;&#160;<a class="el" href="serverx_8h.html#a937d4dd628a8858b443a399410d2600ba54957cf47b2c20cda66ae848d2b3aacb">Break</a>
+, <a class="el" href="serverx_8h.html#a937d4dd628a8858b443a399410d2600ba45a66636ecd16b869e4aadd738813583">Continue</a>
+, <a class="el" href="serverx_8h.html#a937d4dd628a8858b443a399410d2600ba4dfd42ec49d09d8c6555c218301cc30f">Error</a>
+, <a class="el" href="serverx_8h.html#a937d4dd628a8858b443a399410d2600ba6d32c34708a0a3507c4bdb89219d650b">True</a>
+, <br />
+&#160;&#160;<a class="el" href="serverx_8h.html#a937d4dd628a8858b443a399410d2600baf9d46b7804d93a4fcde88489a1b68c24">False</a>
+, <a class="el" href="serverx_8h.html#a937d4dd628a8858b443a399410d2600bac9d3e887722f2bc482bcca9d41c512af">None</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a937d4dd628a8858b443a399410d2600b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перечисление для результатов операций.  <a href="serverx_8h.html#a937d4dd628a8858b443a399410d2600b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a937d4dd628a8858b443a399410d2600b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p >Значения и константы для системы передачи сообщений. </p>
+<p >T0: Частота отправки сообщений в OUT. T1: Время ожидания первого подтверждения ACK (в мс). TSTAT: Интервал вывода статистики (в мс). T2: Интервал между пульсами по второму соединению (в мс). MRSZ: Максимальное число неподтвержденных сообщений для переключения на другую сеть. BUF: Максимальный размер буфера сообщения. ACKSZ: Размер пакета подтверждения ACK. COOKIESZ: Размер области номера пакета. ACK: Символ подтверждения ACK. </p>
+</div><h2 class="groupheader">Перечисления</h2>
+<a id="a937d4dd628a8858b443a399410d2600b" name="a937d4dd628a8858b443a399410d2600b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a937d4dd628a8858b443a399410d2600b">&#9670;&nbsp;</a></span>result</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="serverx_8h.html#a937d4dd628a8858b443a399410d2600b">result</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Перечисление для результатов операций. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a937d4dd628a8858b443a399410d2600ba54957cf47b2c20cda66ae848d2b3aacb" name="a937d4dd628a8858b443a399410d2600ba54957cf47b2c20cda66ae848d2b3aacb"></a>Break&#160;</td><td class="fielddoc"><p >Прервать операцию. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a937d4dd628a8858b443a399410d2600ba45a66636ecd16b869e4aadd738813583" name="a937d4dd628a8858b443a399410d2600ba45a66636ecd16b869e4aadd738813583"></a>Continue&#160;</td><td class="fielddoc"><p >Продолжить операцию. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a937d4dd628a8858b443a399410d2600ba4dfd42ec49d09d8c6555c218301cc30f" name="a937d4dd628a8858b443a399410d2600ba4dfd42ec49d09d8c6555c218301cc30f"></a>Error&#160;</td><td class="fielddoc"><p >Ошибка. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a937d4dd628a8858b443a399410d2600ba6d32c34708a0a3507c4bdb89219d650b" name="a937d4dd628a8858b443a399410d2600ba6d32c34708a0a3507c4bdb89219d650b"></a>True&#160;</td><td class="fielddoc"><p >Истина. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a937d4dd628a8858b443a399410d2600baf9d46b7804d93a4fcde88489a1b68c24" name="a937d4dd628a8858b443a399410d2600baf9d46b7804d93a4fcde88489a1b68c24"></a>False&#160;</td><td class="fielddoc"><p >Ложь. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a937d4dd628a8858b443a399410d2600bac9d3e887722f2bc482bcca9d41c512af" name="a937d4dd628a8858b443a399410d2600bac9d3e887722f2bc482bcca9d41c512af"></a>None&#160;</td><td class="fielddoc"><p >Нет результата. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

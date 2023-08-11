@@ -1,0 +1,215 @@
+\hypertarget{classXOUT}{}\doxysection{Класс XOUT}
+\label{classXOUT}\index{XOUT@{XOUT}}
+
+
+Класс для отправки данных в сокет и приема подтверждений.  
+
+
+
+
+{\ttfamily \#include $<$serverx.\+h$>$}
+
+
+
+Граф наследования\+:XOUT\+:
+% FIG 0
+
+
+Граф связей класса XOUT\+:
+% FIG 1
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classXOUT_a602ed1beff48cb0ef13203643c69aab3}\label{classXOUT_a602ed1beff48cb0ef13203643c69aab3}} 
+{\bfseries XOUT} (SOCKET fd)
+\item 
+\mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600b}{result}} \mbox{\hyperlink{classXOUT_a0662e9eb15e9b457cd9876be62f56bd9}{Send\+Msg}} (char msg\mbox{[}$\,$\mbox{]}, int size)
+\begin{DoxyCompactList}\small\item\em Отправка сообщений. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600b}{result}} \mbox{\hyperlink{classXOUT_ac8eeace268597c6fe6fb79d9b7a79116}{Recv\+Ack}} ()
+\begin{DoxyCompactList}\small\item\em Считывание подтверждений. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structmsgrec__t}{msgrec\+\_\+t}} $\ast$ \mbox{\hyperlink{classXOUT_ad746cbfd1da73fac6aac72d47821b5c8}{getfreerec}} (void)
+\begin{DoxyCompactList}\small\item\em Поиск свободной записи. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structmsgrec__t}{msgrec\+\_\+t}} $\ast$ \mbox{\hyperlink{classXOUT_a34059d980b492406e208100b3ed1526b}{findmsgrec}} (u\+\_\+int32\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Поиск записи с заданным признаком сообщения. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classXOUT_a04006f3081379f6f5d962d34b66c3a6c}{freemsgrec}} (\mbox{\hyperlink{structmsgrec__t}{msgrec\+\_\+t}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Освобождение сообщения. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classXOUT_a670113cab0d34110bb0f458800e53303}{drop}} (\mbox{\hyperlink{structmsgrec__t}{msgrec\+\_\+t}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Отбрасывание записи. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXOUT_a762c31e025feecde60af6721c7109d5f}\label{classXOUT_a762c31e025feecde60af6721c7109d5f}} 
+void {\bfseries set\+Time\+Out} (long time)
+\begin{DoxyCompactList}\small\item\em Инициализация поля новым значением времени. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXOUT_a8b027362a06c3937a4606147d5ddaa5a}\label{classXOUT_a8b027362a06c3937a4606147d5ddaa5a}} 
+void {\bfseries set\+Time\+Out\+Max} (long time)
+\begin{DoxyCompactList}\small\item\em Инициализация полем максимума новым значением времени. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classXOUT_a68b6fd6c34f9104f693b4f7b0117a923}\label{classXOUT_a68b6fd6c34f9104f693b4f7b0117a923}} 
+SOCKET {\bfseries fdxout}
+\begin{DoxyCompactList}\small\item\em Сокет. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXOUT_ab223e6f4da6c491b86218f25ca418ac0}\label{classXOUT_ab223e6f4da6c491b86218f25ca418ac0}} 
+\mbox{\hyperlink{structmsgrec__t}{msgrec\+\_\+t}} {\bfseries mr} \mbox{[}MRSZ\mbox{]}
+\begin{DoxyCompactList}\small\item\em Массив содержащий неподтвержденные сообщения OUT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXOUT_a04ba4b67b5e2661118f7762074d83da1}\label{classXOUT_a04ba4b67b5e2661118f7762074d83da1}} 
+u\+\_\+int32\+\_\+t {\bfseries cn\+\_\+ack\+\_\+out}
+\begin{DoxyCompactList}\small\item\em Получено ack в OUT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXOUT_aa8e83761f4d6fa9a2fb5a1ffc95f1e2a}\label{classXOUT_aa8e83761f4d6fa9a2fb5a1ffc95f1e2a}} 
+unsigned int {\bfseries mid}
+\begin{DoxyCompactList}\small\item\em Переменная для признака сообщения для OUT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXOUT_ac6ec1e779b44484fb2ebdffa853a7f07}\label{classXOUT_ac6ec1e779b44484fb2ebdffa853a7f07}} 
+struct timeval {\bfseries end}
+\begin{DoxyCompactList}\small\item\em Переменная -\/ конец передачи сообщения OUT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXOUT_acc5ae88cf34a543f1a0faefb4bcd3cfc}\label{classXOUT_acc5ae88cf34a543f1a0faefb4bcd3cfc}} 
+int {\bfseries cnt}
+\begin{DoxyCompactList}\small\item\em Остаток сообщения размера для OUT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXOUT_ae9772f3833badb4b0bc05b4d6b2b2bcd}\label{classXOUT_ae9772f3833badb4b0bc05b4d6b2b2bcd}} 
+unsigned int {\bfseries msgid}
+\begin{DoxyCompactList}\small\item\em Отправлено всего сообщений клиенту OUT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXOUT_a567ef024ebe5565c36322fcd5758f1dc}\label{classXOUT_a567ef024ebe5565c36322fcd5758f1dc}} 
+char {\bfseries ack} \mbox{[}ACKSZ\mbox{]}
+\begin{DoxyCompactList}\small\item\em Сообщение ACK для OUT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXOUT_a924c9f1da54af3d282fc834f98ec5071}\label{classXOUT_a924c9f1da54af3d282fc834f98ec5071}} 
+long {\bfseries sr\+\_\+time}
+\begin{DoxyCompactList}\small\item\em Время от отправки сообщения до получения акта общее среднее. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXOUT_a6bd98b0498bde1f28adb4b95980b83d2}\label{classXOUT_a6bd98b0498bde1f28adb4b95980b83d2}} 
+long {\bfseries time\+\_\+out}
+\begin{DoxyCompactList}\small\item\em Время от отправки сообщения до получения акта общее, microsec. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXOUT_a8154787da717a7d0c442cbf9603c2594}\label{classXOUT_a8154787da717a7d0c442cbf9603c2594}} 
+long {\bfseries time\+\_\+out\+\_\+max}
+\begin{DoxyCompactList}\small\item\em Время от отправки сообщения до получения акта общее максимальное, microsec. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXOUT_a43a6c7c372c9919f3b53332f2d6d9deb}\label{classXOUT_a43a6c7c372c9919f3b53332f2d6d9deb}} 
+\mbox{\hyperlink{classTimerManager}{Timer\+Manager}} {\bfseries Time\+Xout}
+\begin{DoxyCompactList}\small\item\em Менеджер таймеров для tselect timeout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для отправки данных в сокет и приема подтверждений. 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classXOUT_a670113cab0d34110bb0f458800e53303}\label{classXOUT_a670113cab0d34110bb0f458800e53303}} 
+\index{XOUT@{XOUT}!drop@{drop}}
+\index{drop@{drop}!XOUT@{XOUT}}
+\doxysubsubsection{\texorpdfstring{drop()}{drop()}}
+{\footnotesize\ttfamily void XOUT\+::drop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmsgrec__t}{msgrec\+\_\+t}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Отбрасывание записи. 
+
+Отбрасывает сообщение.
+
+Функция отбрасывает сообщение и освобождает запись сообщения. Выводится отладочное сообщение о потерянном ACK.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Указатель на запись сообщения. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classXOUT_a34059d980b492406e208100b3ed1526b}\label{classXOUT_a34059d980b492406e208100b3ed1526b}} 
+\index{XOUT@{XOUT}!findmsgrec@{findmsgrec}}
+\index{findmsgrec@{findmsgrec}!XOUT@{XOUT}}
+\doxysubsubsection{\texorpdfstring{findmsgrec()}{findmsgrec()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structmsgrec__t}{msgrec\+\_\+t}} $\ast$ XOUT\+::findmsgrec (\begin{DoxyParamCaption}\item[{u\+\_\+int32\+\_\+t}]{mid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Поиск записи с заданным признаком сообщения. 
+
+Ищет запись сообщения по заданному идентификатору.
+
+Функция ищет запись сообщения в пуле mr по заданному идентификатору. Если найдена запись с указанным идентификатором и длина сообщения не равна -\/1, то возвращается указатель на эту запись. Если запись не найдена, выводится отладочное сообщение и возвращается nullptr.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em mid} & Идентификатор сообщения. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Указатель на запись сообщения или nullptr. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classXOUT_a04006f3081379f6f5d962d34b66c3a6c}\label{classXOUT_a04006f3081379f6f5d962d34b66c3a6c}} 
+\index{XOUT@{XOUT}!freemsgrec@{freemsgrec}}
+\index{freemsgrec@{freemsgrec}!XOUT@{XOUT}}
+\doxysubsubsection{\texorpdfstring{freemsgrec()}{freemsgrec()}}
+{\footnotesize\ttfamily void XOUT\+::freemsgrec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmsgrec__t}{msgrec\+\_\+t}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Освобождение сообщения. 
+
+Освобождает запись сообщения.
+
+Функция проверяет, что запись сообщения уже освобождена. Если запись сообщения уже освобождена, выводится ошибка. Затем устанавливается длина записи сообщения в -\/1.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Указатель на запись сообщения. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classXOUT_ad746cbfd1da73fac6aac72d47821b5c8}\label{classXOUT_ad746cbfd1da73fac6aac72d47821b5c8}} 
+\index{XOUT@{XOUT}!getfreerec@{getfreerec}}
+\index{getfreerec@{getfreerec}!XOUT@{XOUT}}
+\doxysubsubsection{\texorpdfstring{getfreerec()}{getfreerec()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structmsgrec__t}{msgrec\+\_\+t}} $\ast$ XOUT\+::getfreerec (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Поиск свободной записи. 
+
+Возвращает указатель на свободную запись сообщения.
+
+Функция ищет свободную запись сообщения в пуле mr. Если найдена свободная запись, то возвращается указатель на нее. Если свободная запись не найдена, выводится ошибка и возвращается nullptr.
+
+\begin{DoxyReturn}{Возвращает}
+Указатель на свободную запись сообщения или nullptr. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classXOUT_ac8eeace268597c6fe6fb79d9b7a79116}\label{classXOUT_ac8eeace268597c6fe6fb79d9b7a79116}} 
+\index{XOUT@{XOUT}!RecvAck@{RecvAck}}
+\index{RecvAck@{RecvAck}!XOUT@{XOUT}}
+\doxysubsubsection{\texorpdfstring{RecvAck()}{RecvAck()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600b}{result}} XOUT\+::\+Recv\+Ack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Считывание подтверждений. 
+
+Принимает подтверждение сообщения.
+
+Функция принимает подтверждение сообщения через сокет fdxout. Если принято 0 байт, выводится предупреждение и возвращается результат Break. Если принято отрицательное количество байт, выводится ошибка. Если число принятых байт меньше размера подтверждения, возвращается результат Continue. Проверяется полученное подтверждение на соответствие ACK. Увеличивается счетчик подтвержденных сообщений cn\+\_\+ack\+\_\+out. Извлекается идентификатор сообщения из подтверждения. Ищется запись сообщения по идентификатору. Если запись сообщения найдена, останавливается таймер, освобождается запись сообщения и возвращается результат True. Если запись сообщения не найдена, возвращается результат Error.
+
+\begin{DoxyReturn}{Возвращает}
+Результат операции\+: Break, Continue, True или Error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classXOUT_a0662e9eb15e9b457cd9876be62f56bd9}\label{classXOUT_a0662e9eb15e9b457cd9876be62f56bd9}} 
+\index{XOUT@{XOUT}!SendMsg@{SendMsg}}
+\index{SendMsg@{SendMsg}!XOUT@{XOUT}}
+\doxysubsubsection{\texorpdfstring{SendMsg()}{SendMsg()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600b}{result}} XOUT\+::\+Send\+Msg (\begin{DoxyParamCaption}\item[{char}]{msg\mbox{[}$\,$\mbox{]},  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Отправка сообщений. 
+
+Отправляет сообщение.
+
+Функция отправляет сообщение, передавая массив msg и его размер size. Получает свободную запись сообщения с помощью функции \mbox{\hyperlink{classXOUT_ad746cbfd1da73fac6aac72d47821b5c8}{getfreerec()}}. Заполняет структуру сообщения данными из массива msg. Устанавливает идентификатор сообщения и длину сообщения. Отправляет сообщение через сокет fdxout. Если отправка не удалась, возвращает ошибку и освобождает запись сообщения. Если отправка удалась, сохраняет идентификатор таймера на сообщение и запускает таймер статистики. Возвращает результат True.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em msg} & Массив сообщения. \\
+\hline
+{\em size} & Размер сообщения. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Результат операции\+: Error или True. 
+\end{DoxyReturn}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+/home/yvzayets/Документы/\+Git\+Hub/server\+\_\+thread-\/pattern-\//\mbox{\hyperlink{serverx_8h}{serverx.\+h}}\item 
+/home/yvzayets/Документы/\+Git\+Hub/server\+\_\+thread-\/pattern-\//serverx.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,39 @@
+\hypertarget{loger_8h_source}{}\doxysection{loger.\+h}
+\label{loger_8h_source}\index{/home/yvzayets/Документы/GitHub/server\_thread-\/pattern-\//loger.h@{/home/yvzayets/Документы/GitHub/server\_thread-\/pattern-\//loger.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef LOGER\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define LOGER\_H}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stdarg.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}libtcp.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <condition\_variable>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define INIT()          ( program\_name = \(\backslash\)}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{                        strrchr( argv[ 0 ], '/' ) ) ? \(\backslash\)}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{                        program\_name++ : \(\backslash\)}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{                        ( program\_name = argv[ 0 ] )}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{27 \textcolor{keyword}{extern} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* pNameFile;}
+\DoxyCodeLine{31 \textcolor{keyword}{extern} FILE *flog;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{36 \textcolor{keyword}{enum} LogType \{}
+\DoxyCodeLine{37     DEBUG,    }
+\DoxyCodeLine{38     ERROR,    }
+\DoxyCodeLine{39     INFO,     }
+\DoxyCodeLine{40     WARNING   }
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{52 \textcolor{keywordtype}{void} \mbox{\hyperlink{loger_8cpp_aac68f1c0067dfc10c52eac5003181632}{print\_time}}(FILE*);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{66 \textcolor{keywordtype}{void} \mbox{\hyperlink{loger_8cpp_ae1e2f4ed02612d2c7853e99010f04bef}{loger}}(LogType , \textcolor{keywordtype}{int} , \textcolor{keyword}{const} \textcolor{keywordtype}{char}* ,...);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// LOGER\_H}}
+
+\end{DoxyCode}

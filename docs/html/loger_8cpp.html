@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Server TCP Multithread CPP: Файл /home/yvzayets/Документы/GitHub/server_thread-pattern-/loger.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Server TCP Multithread CPP<span id="projectnumber">&#160;0.8</span>
+   </div>
+   <div id="projectbrief">Многопоточный Ассинхронный TCP Сервер</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_deea9ac2ebb701b26350058d0b80c84f.html">Документы</a></li><li class="navelem"><a class="el" href="dir_0dea5837734f1def49efb6e0f46ce015.html">GitHub</a></li><li class="navelem"><a class="el" href="dir_26f4ca58c8766c6af4695911a782f16e.html">server_thread-pattern-</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle"><div class="title">Файл loger.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Функции для логирования с использованием переменного числа аргументов и вывода текущей даты и времени.  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &quot;loger.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для loger.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="loger_8cpp__incl.png" border="0" usemap="#a_2home_2yvzayets_2_xD0_x94_xD0_xBE_xD0_xBA_xD1_x83_xD0_xBC_xD0_xB5_xD0_xBD_xD1_x82_xD1_x8B_2GitHub_2server__thread-pattern-_2loger_8cpp" alt=""/></div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:ae1e2f4ed02612d2c7853e99010f04bef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="loger_8cpp.html#ae1e2f4ed02612d2c7853e99010f04bef">loger</a> (LogType type, int er, const char *msg,...)</td></tr>
+<tr class="memdesc:ae1e2f4ed02612d2c7853e99010f04bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция для логирования с использованием переменного числа аргументов.  <a href="loger_8cpp.html#ae1e2f4ed02612d2c7853e99010f04bef">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae1e2f4ed02612d2c7853e99010f04bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac68f1c0067dfc10c52eac5003181632"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="loger_8cpp.html#aac68f1c0067dfc10c52eac5003181632">print_time</a> (FILE *fd)</td></tr>
+<tr class="memdesc:aac68f1c0067dfc10c52eac5003181632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция для вывода текущей даты и времени.  <a href="loger_8cpp.html#aac68f1c0067dfc10c52eac5003181632">Подробнее...</a><br /></td></tr>
+<tr class="separator:aac68f1c0067dfc10c52eac5003181632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:aabae44b4cef51e20be1003eaaab46683"><td class="memItemLeft" align="right" valign="top"><a id="aabae44b4cef51e20be1003eaaab46683" name="aabae44b4cef51e20be1003eaaab46683"></a>
+std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>mtxLog</b></td></tr>
+<tr class="memdesc:aabae44b4cef51e20be1003eaaab46683"><td class="mdescLeft">&#160;</td><td class="mdescRight">Мьютекс для синхронизации доступа к файлу логирования. <br /></td></tr>
+<tr class="separator:aabae44b4cef51e20be1003eaaab46683"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a820cb1079d0784bd7f0824a7fe0326c5"><td class="memItemLeft" align="right" valign="top"><a id="a820cb1079d0784bd7f0824a7fe0326c5" name="a820cb1079d0784bd7f0824a7fe0326c5"></a>
+std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>mtxTime</b></td></tr>
+<tr class="memdesc:a820cb1079d0784bd7f0824a7fe0326c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Мьютекс для синхронизации вывода текущего времени. <br /></td></tr>
+<tr class="separator:a820cb1079d0784bd7f0824a7fe0326c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4c7d12a8e219885f55fa917dd6e64dd"><td class="memItemLeft" align="right" valign="top"><a id="af4c7d12a8e219885f55fa917dd6e64dd" name="af4c7d12a8e219885f55fa917dd6e64dd"></a>
+std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><b>condLog</b></td></tr>
+<tr class="memdesc:af4c7d12a8e219885f55fa917dd6e64dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Условная переменная для оповещения о завершении записи в файл логирования. <br /></td></tr>
+<tr class="separator:af4c7d12a8e219885f55fa917dd6e64dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p >Функции для логирования с использованием переменного числа аргументов и вывода текущей даты и времени. </p>
+</div><h2 class="groupheader">Функции</h2>
+<a id="ae1e2f4ed02612d2c7853e99010f04bef" name="ae1e2f4ed02612d2c7853e99010f04bef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1e2f4ed02612d2c7853e99010f04bef">&#9670;&nbsp;</a></span>loger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void loger </td>
+          <td>(</td>
+          <td class="paramtype">LogType&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>er</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция для логирования с использованием переменного числа аргументов. </p>
+<p >Функция для логирования сообщений.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Тип лога (DEBUG, ERROR, INFO, WARNING). </td></tr>
+    <tr><td class="paramname">er</td><td>Код ошибки (если есть). </td></tr>
+    <tr><td class="paramname">msg</td><td>Форматированное сообщение для лога. </td></tr>
+    <tr><td class="paramname">...</td><td>Дополнительные аргументы (переменное число параметров). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aac68f1c0067dfc10c52eac5003181632" name="aac68f1c0067dfc10c52eac5003181632"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac68f1c0067dfc10c52eac5003181632">&#9670;&nbsp;</a></span>print_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_time </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция для вывода текущей даты и времени. </p>
+<p >Выводит текущее время в формате "Дата ГГГГ-ММ-ДД Время ЧЧ:ММ:СС" в указанный файл.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fd</td><td>Указатель на файл, в который будет записано время. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

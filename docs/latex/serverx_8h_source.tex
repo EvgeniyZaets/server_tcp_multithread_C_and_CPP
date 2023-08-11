@@ -1,0 +1,126 @@
+\hypertarget{serverx_8h_source}{}\doxysection{serverx.\+h}
+\label{serverx_8h_source}\index{/home/yvzayets/Документы/GitHub/server\_thread-\/pattern-\//serverx.h@{/home/yvzayets/Документы/GitHub/server\_thread-\/pattern-\//serverx.h}}
+\mbox{\hyperlink{serverx_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef SERVERX\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define SERVERX\_H}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}libtcp.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}loger.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}timemanager.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}safecout.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define T0          20}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define T1          1000}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define TSTAT       5000}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define T2          5000}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define MRSZ        128}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define BUF         3700}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define ACKSZ       (sizeof(u\_int32\_t)+1)}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define COOKIESZ    sizeof(u\_int32\_t)}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define ACK         0x6}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{36 \textcolor{keyword}{enum} \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600b}{result}}\{}
+\DoxyCodeLine{37     \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600ba54957cf47b2c20cda66ae848d2b3aacb}{Break}},      }
+\DoxyCodeLine{38     \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600ba45a66636ecd16b869e4aadd738813583}{Continue}},   }
+\DoxyCodeLine{39     \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600ba4dfd42ec49d09d8c6555c218301cc30f}{Error}},      }
+\DoxyCodeLine{40     \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600ba6d32c34708a0a3507c4bdb89219d650b}{True}},       }
+\DoxyCodeLine{41     \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600baf9d46b7804d93a4fcde88489a1b68c24}{False}},      }
+\DoxyCodeLine{42     \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600bac9d3e887722f2bc482bcca9d41c512af}{None}}        }
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{53 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55     u\_int32\_t \mbox{\hyperlink{structpacket__t_ac2201fcd087426611a6513900a4be272}{len}};      }
+\DoxyCodeLine{56     u\_int32\_t \mbox{\hyperlink{structpacket__t_a2f487fd42c67c5aa95dd9a5bab5fe888}{cookie}};   }
+\DoxyCodeLine{57     \textcolor{keywordtype}{char} buf[BUF];      }
+\DoxyCodeLine{58 \} \mbox{\hyperlink{structpacket__t}{packet\_t}};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{68 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{69 \{}
+\DoxyCodeLine{70     \mbox{\hyperlink{structpacket__t}{packet\_t}} \mbox{\hyperlink{structmsgrec__t_a91439f494c87ce7d8f6c9eb7ab2999a0}{pkt}};               }
+\DoxyCodeLine{71     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structmsgrec__t_a3cacc4314c52a7003bfe6bc4aa5a6552}{id}};            }
+\DoxyCodeLine{72     \textcolor{keyword}{struct }timeval start;       }
+\DoxyCodeLine{73 \} \mbox{\hyperlink{structmsgrec__t}{msgrec\_t}};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{79 \textcolor{keyword}{class }\mbox{\hyperlink{classXOUT}{XOUT}} \{}
+\DoxyCodeLine{80 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{81     SOCKET \mbox{\hyperlink{classXOUT_a68b6fd6c34f9104f693b4f7b0117a923}{fdxout}};                  }
+\DoxyCodeLine{82     \mbox{\hyperlink{structmsgrec__t}{msgrec\_t}} \mbox{\hyperlink{classXOUT_ab223e6f4da6c491b86218f25ca418ac0}{mr}}[MRSZ];              }
+\DoxyCodeLine{83     u\_int32\_t \mbox{\hyperlink{classXOUT_a04ba4b67b5e2661118f7762074d83da1}{cn\_ack\_out}};           }
+\DoxyCodeLine{84     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classXOUT_aa8e83761f4d6fa9a2fb5a1ffc95f1e2a}{mid}};               }
+\DoxyCodeLine{85     \textcolor{keyword}{struct }timeval \mbox{\hyperlink{classXOUT_ac6ec1e779b44484fb2ebdffa853a7f07}{end}};             }
+\DoxyCodeLine{86     \textcolor{keywordtype}{int} \mbox{\hyperlink{classXOUT_acc5ae88cf34a543f1a0faefb4bcd3cfc}{cnt}};                        }
+\DoxyCodeLine{87     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classXOUT_ae9772f3833badb4b0bc05b4d6b2b2bcd}{msgid}};             }
+\DoxyCodeLine{88     \textcolor{keywordtype}{char} \mbox{\hyperlink{classXOUT_a567ef024ebe5565c36322fcd5758f1dc}{ack}}[ACKSZ];                }
+\DoxyCodeLine{89     \textcolor{keywordtype}{long} \mbox{\hyperlink{classXOUT_a924c9f1da54af3d282fc834f98ec5071}{sr\_time}};                   }
+\DoxyCodeLine{90     \textcolor{keywordtype}{long} \mbox{\hyperlink{classXOUT_a6bd98b0498bde1f28adb4b95980b83d2}{time\_out}};                  }
+\DoxyCodeLine{91     \textcolor{keywordtype}{long} \mbox{\hyperlink{classXOUT_a8154787da717a7d0c442cbf9603c2594}{time\_out\_max}};              }
+\DoxyCodeLine{92     \mbox{\hyperlink{classTimerManager}{TimerManager}} \mbox{\hyperlink{classXOUT_a43a6c7c372c9919f3b53332f2d6d9deb}{TimeXout}};          }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \mbox{\hyperlink{structmsgrec__t}{msgrec\_t}} *\mbox{\hyperlink{classXOUT_ad746cbfd1da73fac6aac72d47821b5c8}{getfreerec}}(\textcolor{keywordtype}{void});                          }
+\DoxyCodeLine{95     \mbox{\hyperlink{structmsgrec__t}{msgrec\_t}} *\mbox{\hyperlink{classXOUT_a34059d980b492406e208100b3ed1526b}{findmsgrec}}(u\_int32\_t);                     }
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} \mbox{\hyperlink{classXOUT_a04006f3081379f6f5d962d34b66c3a6c}{freemsgrec}}( \mbox{\hyperlink{structmsgrec__t}{msgrec\_t}}* );                        }
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} \mbox{\hyperlink{classXOUT_a670113cab0d34110bb0f458800e53303}{drop}}(\mbox{\hyperlink{structmsgrec__t}{msgrec\_t}}* );                               }
+\DoxyCodeLine{98     \textcolor{keywordtype}{void} \mbox{\hyperlink{classXOUT_a762c31e025feecde60af6721c7109d5f}{setTimeOut}}(\textcolor{keywordtype}{long} time)\{\mbox{\hyperlink{classXOUT_a6bd98b0498bde1f28adb4b95980b83d2}{time\_out}} += time;\}                                }
+\DoxyCodeLine{99     \textcolor{keywordtype}{void} \mbox{\hyperlink{classXOUT_a8b027362a06c3937a4606147d5ddaa5a}{setTimeOutMax}}(\textcolor{keywordtype}{long} time)\{\mbox{\hyperlink{classXOUT_a8154787da717a7d0c442cbf9603c2594}{time\_out\_max}} = std::max(time,\mbox{\hyperlink{classXOUT_a8154787da717a7d0c442cbf9603c2594}{time\_out\_max}});\}   }
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{keyword}{public}:}
+\DoxyCodeLine{102     \mbox{\hyperlink{classXOUT}{XOUT}}(SOCKET fd):\mbox{\hyperlink{classXOUT_a68b6fd6c34f9104f693b4f7b0117a923}{fdxout}}(fd)\{}
+\DoxyCodeLine{103         \textcolor{keywordflow}{for} (\mbox{\hyperlink{structmsgrec__t}{msgrec\_t}}* data\_out = \mbox{\hyperlink{classXOUT_ab223e6f4da6c491b86218f25ca418ac0}{mr}}; data\_out<\mbox{\hyperlink{classXOUT_ab223e6f4da6c491b86218f25ca418ac0}{mr}}+MRSZ;data\_out++)}
+\DoxyCodeLine{104             data\_out-\/>pkt.len=-\/1;}
+\DoxyCodeLine{105     \};}
+\DoxyCodeLine{106     \mbox{\hyperlink{classXOUT}{\string~XOUT}}()\{std::cout << \textcolor{stringliteral}{"{}XOUT delete "{}} << std::endl;\};}
+\DoxyCodeLine{107     \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600b}{result}} \mbox{\hyperlink{classXOUT_a0662e9eb15e9b457cd9876be62f56bd9}{SendMsg}}(\textcolor{keywordtype}{char} msg[],\textcolor{keywordtype}{int} size);   }
+\DoxyCodeLine{108     \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600b}{result}} \mbox{\hyperlink{classXOUT_ac8eeace268597c6fe6fb79d9b7a79116}{RecvAck}}();                      }
+\DoxyCodeLine{109 \};}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{115 \textcolor{keyword}{class }\mbox{\hyperlink{classXIN}{XIN}} \{}
+\DoxyCodeLine{116 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{117     u\_int32\_t \mbox{\hyperlink{classXIN_ad354987d0c134c01218ef3cd02979ad6}{cn\_in}};                    }
+\DoxyCodeLine{118     u\_int32\_t \mbox{\hyperlink{classXIN_abcfb64b6cfc714cda5e53387f61ecf1c}{cn\_ack\_in}};                }
+\DoxyCodeLine{119     u\_int32\_t \mbox{\hyperlink{classXIN_aac32f7042baca81941cc7012ea4cdc47}{Lost}};                     }
+\DoxyCodeLine{120     SOCKET \mbox{\hyperlink{classXIN_a7e3b2ff7552cc6163214ecfd08ec02c6}{fdxin}};                       }
+\DoxyCodeLine{121     \textcolor{keywordtype}{int} \mbox{\hyperlink{classXIN_a11fa3a934c258b3bb7b578ccdad69eb5}{size\_in}};                        }
+\DoxyCodeLine{122 \textcolor{keyword}{public}:}
+\DoxyCodeLine{123     \mbox{\hyperlink{classXIN}{XIN}}(SOCKET fd):\mbox{\hyperlink{classXIN_a7e3b2ff7552cc6163214ecfd08ec02c6}{fdxin}}(fd),\mbox{\hyperlink{classXIN_a11fa3a934c258b3bb7b578ccdad69eb5}{size\_in}}(BUF)\{\};}
+\DoxyCodeLine{124     \mbox{\hyperlink{classXIN}{\string~XIN}}()\{std::cout << \textcolor{stringliteral}{"{}XIN delete "{}} << std::endl;\};}
+\DoxyCodeLine{125     \textcolor{keywordtype}{char} \mbox{\hyperlink{classXIN_a146fe87c77192031f6579d271926c533}{msgin}}[BUF];                     }
+\DoxyCodeLine{126     \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600b}{result}} \mbox{\hyperlink{classXIN_aa8585262a15a944066c88ae7e4d78a64}{Eсho}}();                       }
+\DoxyCodeLine{127 \};}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{133 \textcolor{keyword}{class }\mbox{\hyperlink{classServerXOI}{ServerXOI}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXOUT}{XOUT}}, \mbox{\hyperlink{classXIN}{XIN}} \{}
+\DoxyCodeLine{134 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{135     SOCKET \mbox{\hyperlink{classServerXOI_a5c9856dfc4535c995f62fd06a0f3f7c1}{server\_out}};                  }
+\DoxyCodeLine{136     SOCKET \mbox{\hyperlink{classServerXOI_a8e830d0d297b038fca31e20085c86102}{server\_in}};                   }
+\DoxyCodeLine{137     SOCKET \mbox{\hyperlink{classServerXOI_a22f34f92bb0e67784d6be07c7b8cdb79}{client\_out}};                  }
+\DoxyCodeLine{138     SOCKET \mbox{\hyperlink{classServerXOI_a89d4983287a274c048845da0b9812511}{client\_in}};                   }
+\DoxyCodeLine{139     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{classServerXOI_afe0602a0e6b05a10a7294e374bdfce3c}{port\_out}};               }
+\DoxyCodeLine{140     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{classServerXOI_a6816bd7b3c2e143cf15656ccd900b6e8}{port\_in}};                }
+\DoxyCodeLine{141     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{classServerXOI_a21019600426a6db226807c24b3b33f59}{server\_name}};            }
+\DoxyCodeLine{142     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* ip;}
+\DoxyCodeLine{143     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classServerXOI_a07c23fc4e01a2766389ba9559bb7bce6}{sock\_out\_flag}} = \textcolor{keyword}{false};         }
+\DoxyCodeLine{144     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classServerXOI_a072df61b21ed47b36fbbd8c8d6e97d50}{sock\_in\_flag}} = \textcolor{keyword}{false};          }
+\DoxyCodeLine{145 \textcolor{keyword}{public}:}
+\DoxyCodeLine{146     \mbox{\hyperlink{classServerXOI}{ServerXOI}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* ip, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* out, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* in, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* name,\mbox{\hyperlink{classSafeCout}{SafeCout}}* s)}
+\DoxyCodeLine{147         :\mbox{\hyperlink{classXOUT}{XOUT}}(-\/1),\mbox{\hyperlink{classXIN}{XIN}}(-\/1),\mbox{\hyperlink{classServerXOI_afe0602a0e6b05a10a7294e374bdfce3c}{port\_out}}(out),\mbox{\hyperlink{classServerXOI_a6816bd7b3c2e143cf15656ccd900b6e8}{port\_in}}(in),\mbox{\hyperlink{classServerXOI_a21019600426a6db226807c24b3b33f59}{server\_name}}(name),ip(ip),\mbox{\hyperlink{classServerXOI_a469f03d0e3f097a5cddd92157b5ab577}{scout}}(s) \{\mbox{\hyperlink{classServerXOI_a0d2bf378489ea5e3a55405fbea1c53c2}{Start}}();\};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149     \mbox{\hyperlink{classServerXOI}{\string~ServerXOI}}()\{std::cout << \textcolor{stringliteral}{"{}ServerXOI delete "{}} << std::endl;Stop();\};}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     \mbox{\hyperlink{classSafeCout}{SafeCout}}* \mbox{\hyperlink{classServerXOI_a469f03d0e3f097a5cddd92157b5ab577}{scout}};                    }
+\DoxyCodeLine{152     \textcolor{keywordtype}{void} \mbox{\hyperlink{classServerXOI_a0d2bf378489ea5e3a55405fbea1c53c2}{Start}}();                       }
+\DoxyCodeLine{153     \textcolor{keywordtype}{void} Stop()\{}
+\DoxyCodeLine{154         close(\mbox{\hyperlink{classServerXOI_a5c9856dfc4535c995f62fd06a0f3f7c1}{server\_out}});}
+\DoxyCodeLine{155         close(\mbox{\hyperlink{classServerXOI_a8e830d0d297b038fca31e20085c86102}{server\_in}});}
+\DoxyCodeLine{156         *\mbox{\hyperlink{classServerXOI_a469f03d0e3f097a5cddd92157b5ab577}{scout}} << \textcolor{stringliteral}{"{}закрыли сокеты сервера: "{}} << \mbox{\hyperlink{classServerXOI_a21019600426a6db226807c24b3b33f59}{server\_name}} << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{157     \};                                   }
+\DoxyCodeLine{158     \textcolor{keywordtype}{void} \mbox{\hyperlink{classServerXOI_a38327935a1a8a365d8c0a1b52ee19c35}{init\_cnt}}();                    }
+\DoxyCodeLine{159     \textcolor{keywordtype}{void} \mbox{\hyperlink{classServerXOI_afba414a32f10546b2be2a5ad35bcc9cc}{ClientHandler}}();               }
+\DoxyCodeLine{160     \textcolor{keywordtype}{void} \mbox{\hyperlink{classServerXOI_ae5d83e47a49b57931ca4c74a5a4b6a05}{statistic}}();                   }
+\DoxyCodeLine{161     \textcolor{keywordtype}{void} \mbox{\hyperlink{classServerXOI_a07146acd78d7b3a0046760a53d278597}{AcceptToServer}}(\textcolor{keywordtype}{int} server, \textcolor{keywordtype}{bool}* sock\_flag, \textcolor{keywordtype}{int}* client); }
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 \};}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SERVERX\_H}}
+
+\end{DoxyCode}

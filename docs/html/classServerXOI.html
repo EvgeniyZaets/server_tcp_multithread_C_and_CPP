@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Server TCP Multithread CPP: Класс ServerXOI</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Server TCP Multithread CPP<span id="projectnumber">&#160;0.8</span>
+   </div>
+   <div id="projectbrief">Многопоточный Ассинхронный TCP Сервер</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="#pro-attribs">Защищенные данные</a> &#124;
+<a href="classServerXOI-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс ServerXOI</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс сервера с асинхронным вводом <a class="el" href="classXIN.html" title="Класс для приема данных и отправки подтверждений.">XIN</a> и выводом <a class="el" href="classXOUT.html" title="Класс для отправки данных в сокет и приема подтверждений.">XOUT</a>.  
+ <a href="classServerXOI.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="serverx_8h_source.html">serverx.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:ServerXOI:</div>
+<div class="dyncontent">
+<div class="center"><img src="classServerXOI__inherit__graph.png" border="0" usemap="#aServerXOI_inherit__map" alt="Inheritance graph"/></div>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<div class="dynheader">
+Граф связей класса ServerXOI:</div>
+<div class="dyncontent">
+<div class="center"><img src="classServerXOI__coll__graph.png" border="0" usemap="#aServerXOI_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:aeacf871b8123a75ce51791ceae27b80d"><td class="memItemLeft" align="right" valign="top"><a id="aeacf871b8123a75ce51791ceae27b80d" name="aeacf871b8123a75ce51791ceae27b80d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ServerXOI</b> (const char *ip, const char *out, const char *in, const char *name, <a class="el" href="classSafeCout.html">SafeCout</a> *s)</td></tr>
+<tr class="separator:aeacf871b8123a75ce51791ceae27b80d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d2bf378489ea5e3a55405fbea1c53c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerXOI.html#a0d2bf378489ea5e3a55405fbea1c53c2">Start</a> ()</td></tr>
+<tr class="memdesc:a0d2bf378489ea5e3a55405fbea1c53c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Старт сервера.  <a href="classServerXOI.html#a0d2bf378489ea5e3a55405fbea1c53c2">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0d2bf378489ea5e3a55405fbea1c53c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d17cd60ec89d83e6dbca7150f29bba4"><td class="memItemLeft" align="right" valign="top"><a id="a4d17cd60ec89d83e6dbca7150f29bba4" name="a4d17cd60ec89d83e6dbca7150f29bba4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Stop</b> ()</td></tr>
+<tr class="separator:a4d17cd60ec89d83e6dbca7150f29bba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38327935a1a8a365d8c0a1b52ee19c35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerXOI.html#a38327935a1a8a365d8c0a1b52ee19c35">init_cnt</a> ()</td></tr>
+<tr class="memdesc:a38327935a1a8a365d8c0a1b52ee19c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Стоп сервера.  <a href="classServerXOI.html#a38327935a1a8a365d8c0a1b52ee19c35">Подробнее...</a><br /></td></tr>
+<tr class="separator:a38327935a1a8a365d8c0a1b52ee19c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba414a32f10546b2be2a5ad35bcc9cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerXOI.html#afba414a32f10546b2be2a5ad35bcc9cc">ClientHandler</a> ()</td></tr>
+<tr class="memdesc:afba414a32f10546b2be2a5ad35bcc9cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция обработки клиента - отправка и прием сообщений.  <a href="classServerXOI.html#afba414a32f10546b2be2a5ad35bcc9cc">Подробнее...</a><br /></td></tr>
+<tr class="separator:afba414a32f10546b2be2a5ad35bcc9cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5d83e47a49b57931ca4c74a5a4b6a05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerXOI.html#ae5d83e47a49b57931ca4c74a5a4b6a05">statistic</a> ()</td></tr>
+<tr class="memdesc:ae5d83e47a49b57931ca4c74a5a4b6a05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вывод статистики.  <a href="classServerXOI.html#ae5d83e47a49b57931ca4c74a5a4b6a05">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae5d83e47a49b57931ca4c74a5a4b6a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07146acd78d7b3a0046760a53d278597"><td class="memItemLeft" align="right" valign="top"><a id="a07146acd78d7b3a0046760a53d278597" name="a07146acd78d7b3a0046760a53d278597"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AcceptToServer</b> (int server, bool *sock_flag, int *client)</td></tr>
+<tr class="memdesc:a07146acd78d7b3a0046760a53d278597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Подключение клиента к сокету. <br /></td></tr>
+<tr class="separator:a07146acd78d7b3a0046760a53d278597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classXOUT"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classXOUT')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="classXOUT.html">XOUT</a></td></tr>
+<tr class="memitem:a602ed1beff48cb0ef13203643c69aab3 inherit pub_methods_classXOUT"><td class="memItemLeft" align="right" valign="top"><a id="a602ed1beff48cb0ef13203643c69aab3" name="a602ed1beff48cb0ef13203643c69aab3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>XOUT</b> (SOCKET fd)</td></tr>
+<tr class="separator:a602ed1beff48cb0ef13203643c69aab3 inherit pub_methods_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0662e9eb15e9b457cd9876be62f56bd9 inherit pub_methods_classXOUT"><td class="memItemLeft" align="right" valign="top"><a class="el" href="serverx_8h.html#a937d4dd628a8858b443a399410d2600b">result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classXOUT.html#a0662e9eb15e9b457cd9876be62f56bd9">SendMsg</a> (char msg[], int size)</td></tr>
+<tr class="memdesc:a0662e9eb15e9b457cd9876be62f56bd9 inherit pub_methods_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправка сообщений.  <a href="classXOUT.html#a0662e9eb15e9b457cd9876be62f56bd9">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0662e9eb15e9b457cd9876be62f56bd9 inherit pub_methods_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8eeace268597c6fe6fb79d9b7a79116 inherit pub_methods_classXOUT"><td class="memItemLeft" align="right" valign="top"><a class="el" href="serverx_8h.html#a937d4dd628a8858b443a399410d2600b">result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classXOUT.html#ac8eeace268597c6fe6fb79d9b7a79116">RecvAck</a> ()</td></tr>
+<tr class="memdesc:ac8eeace268597c6fe6fb79d9b7a79116 inherit pub_methods_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Считывание подтверждений.  <a href="classXOUT.html#ac8eeace268597c6fe6fb79d9b7a79116">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac8eeace268597c6fe6fb79d9b7a79116 inherit pub_methods_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:a469f03d0e3f097a5cddd92157b5ab577"><td class="memItemLeft" align="right" valign="top"><a id="a469f03d0e3f097a5cddd92157b5ab577" name="a469f03d0e3f097a5cddd92157b5ab577"></a>
+<a class="el" href="classSafeCout.html">SafeCout</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>scout</b></td></tr>
+<tr class="memdesc:a469f03d0e3f097a5cddd92157b5ab577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Безопасный вывод сообщений. <br /></td></tr>
+<tr class="separator:a469f03d0e3f097a5cddd92157b5ab577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr class="memitem:a5c9856dfc4535c995f62fd06a0f3f7c1"><td class="memItemLeft" align="right" valign="top"><a id="a5c9856dfc4535c995f62fd06a0f3f7c1" name="a5c9856dfc4535c995f62fd06a0f3f7c1"></a>
+SOCKET&#160;</td><td class="memItemRight" valign="bottom"><b>server_out</b></td></tr>
+<tr class="memdesc:a5c9856dfc4535c995f62fd06a0f3f7c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сокет сервера OUT. <br /></td></tr>
+<tr class="separator:a5c9856dfc4535c995f62fd06a0f3f7c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e830d0d297b038fca31e20085c86102"><td class="memItemLeft" align="right" valign="top"><a id="a8e830d0d297b038fca31e20085c86102" name="a8e830d0d297b038fca31e20085c86102"></a>
+SOCKET&#160;</td><td class="memItemRight" valign="bottom"><b>server_in</b></td></tr>
+<tr class="memdesc:a8e830d0d297b038fca31e20085c86102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сокет сервера IN. <br /></td></tr>
+<tr class="separator:a8e830d0d297b038fca31e20085c86102"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f34f92bb0e67784d6be07c7b8cdb79"><td class="memItemLeft" align="right" valign="top"><a id="a22f34f92bb0e67784d6be07c7b8cdb79" name="a22f34f92bb0e67784d6be07c7b8cdb79"></a>
+SOCKET&#160;</td><td class="memItemRight" valign="bottom"><b>client_out</b></td></tr>
+<tr class="memdesc:a22f34f92bb0e67784d6be07c7b8cdb79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сокет клиента OUT. <br /></td></tr>
+<tr class="separator:a22f34f92bb0e67784d6be07c7b8cdb79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89d4983287a274c048845da0b9812511"><td class="memItemLeft" align="right" valign="top"><a id="a89d4983287a274c048845da0b9812511" name="a89d4983287a274c048845da0b9812511"></a>
+SOCKET&#160;</td><td class="memItemRight" valign="bottom"><b>client_in</b></td></tr>
+<tr class="memdesc:a89d4983287a274c048845da0b9812511"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сокет клиента IN. <br /></td></tr>
+<tr class="separator:a89d4983287a274c048845da0b9812511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe0602a0e6b05a10a7294e374bdfce3c"><td class="memItemLeft" align="right" valign="top"><a id="afe0602a0e6b05a10a7294e374bdfce3c" name="afe0602a0e6b05a10a7294e374bdfce3c"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>port_out</b></td></tr>
+<tr class="memdesc:afe0602a0e6b05a10a7294e374bdfce3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Порт OUT. <br /></td></tr>
+<tr class="separator:afe0602a0e6b05a10a7294e374bdfce3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6816bd7b3c2e143cf15656ccd900b6e8"><td class="memItemLeft" align="right" valign="top"><a id="a6816bd7b3c2e143cf15656ccd900b6e8" name="a6816bd7b3c2e143cf15656ccd900b6e8"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>port_in</b></td></tr>
+<tr class="memdesc:a6816bd7b3c2e143cf15656ccd900b6e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Порт IN. <br /></td></tr>
+<tr class="separator:a6816bd7b3c2e143cf15656ccd900b6e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21019600426a6db226807c24b3b33f59"><td class="memItemLeft" align="right" valign="top"><a id="a21019600426a6db226807c24b3b33f59" name="a21019600426a6db226807c24b3b33f59"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>server_name</b></td></tr>
+<tr class="memdesc:a21019600426a6db226807c24b3b33f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Имя сервера. <br /></td></tr>
+<tr class="separator:a21019600426a6db226807c24b3b33f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa132dd7073c8cd397b9df000ff844d42"><td class="memItemLeft" align="right" valign="top"><a id="aa132dd7073c8cd397b9df000ff844d42" name="aa132dd7073c8cd397b9df000ff844d42"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>ip</b></td></tr>
+<tr class="separator:aa132dd7073c8cd397b9df000ff844d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07c23fc4e01a2766389ba9559bb7bce6"><td class="memItemLeft" align="right" valign="top"><a id="a07c23fc4e01a2766389ba9559bb7bce6" name="a07c23fc4e01a2766389ba9559bb7bce6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>sock_out_flag</b> = false</td></tr>
+<tr class="memdesc:a07c23fc4e01a2766389ba9559bb7bce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Флаг подключения порта OUT. <br /></td></tr>
+<tr class="separator:a07c23fc4e01a2766389ba9559bb7bce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a072df61b21ed47b36fbbd8c8d6e97d50"><td class="memItemLeft" align="right" valign="top"><a id="a072df61b21ed47b36fbbd8c8d6e97d50" name="a072df61b21ed47b36fbbd8c8d6e97d50"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>sock_in_flag</b> = false</td></tr>
+<tr class="memdesc:a072df61b21ed47b36fbbd8c8d6e97d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Флаг подключения порта IN. <br /></td></tr>
+<tr class="separator:a072df61b21ed47b36fbbd8c8d6e97d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classXOUT"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classXOUT')"><img src="closed.png" alt="-"/>&#160;Защищенные данные унаследованные от <a class="el" href="classXOUT.html">XOUT</a></td></tr>
+<tr class="memitem:a68b6fd6c34f9104f693b4f7b0117a923 inherit pro_attribs_classXOUT"><td class="memItemLeft" align="right" valign="top"><a id="a68b6fd6c34f9104f693b4f7b0117a923" name="a68b6fd6c34f9104f693b4f7b0117a923"></a>
+SOCKET&#160;</td><td class="memItemRight" valign="bottom"><b>fdxout</b></td></tr>
+<tr class="memdesc:a68b6fd6c34f9104f693b4f7b0117a923 inherit pro_attribs_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сокет. <br /></td></tr>
+<tr class="separator:a68b6fd6c34f9104f693b4f7b0117a923 inherit pro_attribs_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab223e6f4da6c491b86218f25ca418ac0 inherit pro_attribs_classXOUT"><td class="memItemLeft" align="right" valign="top"><a id="ab223e6f4da6c491b86218f25ca418ac0" name="ab223e6f4da6c491b86218f25ca418ac0"></a>
+<a class="el" href="structmsgrec__t.html">msgrec_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mr</b> [MRSZ]</td></tr>
+<tr class="memdesc:ab223e6f4da6c491b86218f25ca418ac0 inherit pro_attribs_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Массив содержащий неподтвержденные сообщения OUT. <br /></td></tr>
+<tr class="separator:ab223e6f4da6c491b86218f25ca418ac0 inherit pro_attribs_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04ba4b67b5e2661118f7762074d83da1 inherit pro_attribs_classXOUT"><td class="memItemLeft" align="right" valign="top"><a id="a04ba4b67b5e2661118f7762074d83da1" name="a04ba4b67b5e2661118f7762074d83da1"></a>
+u_int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>cn_ack_out</b></td></tr>
+<tr class="memdesc:a04ba4b67b5e2661118f7762074d83da1 inherit pro_attribs_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получено ack в OUT. <br /></td></tr>
+<tr class="separator:a04ba4b67b5e2661118f7762074d83da1 inherit pro_attribs_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8e83761f4d6fa9a2fb5a1ffc95f1e2a inherit pro_attribs_classXOUT"><td class="memItemLeft" align="right" valign="top"><a id="aa8e83761f4d6fa9a2fb5a1ffc95f1e2a" name="aa8e83761f4d6fa9a2fb5a1ffc95f1e2a"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>mid</b></td></tr>
+<tr class="memdesc:aa8e83761f4d6fa9a2fb5a1ffc95f1e2a inherit pro_attribs_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Переменная для признака сообщения для OUT. <br /></td></tr>
+<tr class="separator:aa8e83761f4d6fa9a2fb5a1ffc95f1e2a inherit pro_attribs_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6ec1e779b44484fb2ebdffa853a7f07 inherit pro_attribs_classXOUT"><td class="memItemLeft" align="right" valign="top"><a id="ac6ec1e779b44484fb2ebdffa853a7f07" name="ac6ec1e779b44484fb2ebdffa853a7f07"></a>
+struct timeval&#160;</td><td class="memItemRight" valign="bottom"><b>end</b></td></tr>
+<tr class="memdesc:ac6ec1e779b44484fb2ebdffa853a7f07 inherit pro_attribs_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Переменная - конец передачи сообщения OUT. <br /></td></tr>
+<tr class="separator:ac6ec1e779b44484fb2ebdffa853a7f07 inherit pro_attribs_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc5ae88cf34a543f1a0faefb4bcd3cfc inherit pro_attribs_classXOUT"><td class="memItemLeft" align="right" valign="top"><a id="acc5ae88cf34a543f1a0faefb4bcd3cfc" name="acc5ae88cf34a543f1a0faefb4bcd3cfc"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>cnt</b></td></tr>
+<tr class="memdesc:acc5ae88cf34a543f1a0faefb4bcd3cfc inherit pro_attribs_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Остаток сообщения размера для OUT. <br /></td></tr>
+<tr class="separator:acc5ae88cf34a543f1a0faefb4bcd3cfc inherit pro_attribs_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9772f3833badb4b0bc05b4d6b2b2bcd inherit pro_attribs_classXOUT"><td class="memItemLeft" align="right" valign="top"><a id="ae9772f3833badb4b0bc05b4d6b2b2bcd" name="ae9772f3833badb4b0bc05b4d6b2b2bcd"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>msgid</b></td></tr>
+<tr class="memdesc:ae9772f3833badb4b0bc05b4d6b2b2bcd inherit pro_attribs_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправлено всего сообщений клиенту OUT. <br /></td></tr>
+<tr class="separator:ae9772f3833badb4b0bc05b4d6b2b2bcd inherit pro_attribs_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a567ef024ebe5565c36322fcd5758f1dc inherit pro_attribs_classXOUT"><td class="memItemLeft" align="right" valign="top"><a id="a567ef024ebe5565c36322fcd5758f1dc" name="a567ef024ebe5565c36322fcd5758f1dc"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>ack</b> [ACKSZ]</td></tr>
+<tr class="memdesc:a567ef024ebe5565c36322fcd5758f1dc inherit pro_attribs_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сообщение ACK для OUT. <br /></td></tr>
+<tr class="separator:a567ef024ebe5565c36322fcd5758f1dc inherit pro_attribs_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a924c9f1da54af3d282fc834f98ec5071 inherit pro_attribs_classXOUT"><td class="memItemLeft" align="right" valign="top"><a id="a924c9f1da54af3d282fc834f98ec5071" name="a924c9f1da54af3d282fc834f98ec5071"></a>
+long&#160;</td><td class="memItemRight" valign="bottom"><b>sr_time</b></td></tr>
+<tr class="memdesc:a924c9f1da54af3d282fc834f98ec5071 inherit pro_attribs_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Время от отправки сообщения до получения акта общее среднее. <br /></td></tr>
+<tr class="separator:a924c9f1da54af3d282fc834f98ec5071 inherit pro_attribs_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bd98b0498bde1f28adb4b95980b83d2 inherit pro_attribs_classXOUT"><td class="memItemLeft" align="right" valign="top"><a id="a6bd98b0498bde1f28adb4b95980b83d2" name="a6bd98b0498bde1f28adb4b95980b83d2"></a>
+long&#160;</td><td class="memItemRight" valign="bottom"><b>time_out</b></td></tr>
+<tr class="memdesc:a6bd98b0498bde1f28adb4b95980b83d2 inherit pro_attribs_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Время от отправки сообщения до получения акта общее, microsec. <br /></td></tr>
+<tr class="separator:a6bd98b0498bde1f28adb4b95980b83d2 inherit pro_attribs_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8154787da717a7d0c442cbf9603c2594 inherit pro_attribs_classXOUT"><td class="memItemLeft" align="right" valign="top"><a id="a8154787da717a7d0c442cbf9603c2594" name="a8154787da717a7d0c442cbf9603c2594"></a>
+long&#160;</td><td class="memItemRight" valign="bottom"><b>time_out_max</b></td></tr>
+<tr class="memdesc:a8154787da717a7d0c442cbf9603c2594 inherit pro_attribs_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Время от отправки сообщения до получения акта общее максимальное, microsec. <br /></td></tr>
+<tr class="separator:a8154787da717a7d0c442cbf9603c2594 inherit pro_attribs_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43a6c7c372c9919f3b53332f2d6d9deb inherit pro_attribs_classXOUT"><td class="memItemLeft" align="right" valign="top"><a id="a43a6c7c372c9919f3b53332f2d6d9deb" name="a43a6c7c372c9919f3b53332f2d6d9deb"></a>
+<a class="el" href="classTimerManager.html">TimerManager</a>&#160;</td><td class="memItemRight" valign="bottom"><b>TimeXout</b></td></tr>
+<tr class="memdesc:a43a6c7c372c9919f3b53332f2d6d9deb inherit pro_attribs_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Менеджер таймеров для tselect timeout. <br /></td></tr>
+<tr class="separator:a43a6c7c372c9919f3b53332f2d6d9deb inherit pro_attribs_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pro_methods_classXOUT"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classXOUT')"><img src="closed.png" alt="-"/>&#160;Защищенные члены унаследованные от <a class="el" href="classXOUT.html">XOUT</a></td></tr>
+<tr class="memitem:ad746cbfd1da73fac6aac72d47821b5c8 inherit pro_methods_classXOUT"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmsgrec__t.html">msgrec_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classXOUT.html#ad746cbfd1da73fac6aac72d47821b5c8">getfreerec</a> (void)</td></tr>
+<tr class="memdesc:ad746cbfd1da73fac6aac72d47821b5c8 inherit pro_methods_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поиск свободной записи.  <a href="classXOUT.html#ad746cbfd1da73fac6aac72d47821b5c8">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad746cbfd1da73fac6aac72d47821b5c8 inherit pro_methods_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34059d980b492406e208100b3ed1526b inherit pro_methods_classXOUT"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmsgrec__t.html">msgrec_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classXOUT.html#a34059d980b492406e208100b3ed1526b">findmsgrec</a> (u_int32_t)</td></tr>
+<tr class="memdesc:a34059d980b492406e208100b3ed1526b inherit pro_methods_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поиск записи с заданным признаком сообщения.  <a href="classXOUT.html#a34059d980b492406e208100b3ed1526b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a34059d980b492406e208100b3ed1526b inherit pro_methods_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04006f3081379f6f5d962d34b66c3a6c inherit pro_methods_classXOUT"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classXOUT.html#a04006f3081379f6f5d962d34b66c3a6c">freemsgrec</a> (<a class="el" href="structmsgrec__t.html">msgrec_t</a> *)</td></tr>
+<tr class="memdesc:a04006f3081379f6f5d962d34b66c3a6c inherit pro_methods_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Освобождение сообщения.  <a href="classXOUT.html#a04006f3081379f6f5d962d34b66c3a6c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a04006f3081379f6f5d962d34b66c3a6c inherit pro_methods_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a670113cab0d34110bb0f458800e53303 inherit pro_methods_classXOUT"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classXOUT.html#a670113cab0d34110bb0f458800e53303">drop</a> (<a class="el" href="structmsgrec__t.html">msgrec_t</a> *)</td></tr>
+<tr class="memdesc:a670113cab0d34110bb0f458800e53303 inherit pro_methods_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отбрасывание записи.  <a href="classXOUT.html#a670113cab0d34110bb0f458800e53303">Подробнее...</a><br /></td></tr>
+<tr class="separator:a670113cab0d34110bb0f458800e53303 inherit pro_methods_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a762c31e025feecde60af6721c7109d5f inherit pro_methods_classXOUT"><td class="memItemLeft" align="right" valign="top"><a id="a762c31e025feecde60af6721c7109d5f" name="a762c31e025feecde60af6721c7109d5f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setTimeOut</b> (long time)</td></tr>
+<tr class="memdesc:a762c31e025feecde60af6721c7109d5f inherit pro_methods_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация поля новым значением времени. <br /></td></tr>
+<tr class="separator:a762c31e025feecde60af6721c7109d5f inherit pro_methods_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b027362a06c3937a4606147d5ddaa5a inherit pro_methods_classXOUT"><td class="memItemLeft" align="right" valign="top"><a id="a8b027362a06c3937a4606147d5ddaa5a" name="a8b027362a06c3937a4606147d5ddaa5a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setTimeOutMax</b> (long time)</td></tr>
+<tr class="memdesc:a8b027362a06c3937a4606147d5ddaa5a inherit pro_methods_classXOUT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация полем максимума новым значением времени. <br /></td></tr>
+<tr class="separator:a8b027362a06c3937a4606147d5ddaa5a inherit pro_methods_classXOUT"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p >Класс сервера с асинхронным вводом <a class="el" href="classXIN.html" title="Класс для приема данных и отправки подтверждений.">XIN</a> и выводом <a class="el" href="classXOUT.html" title="Класс для отправки данных в сокет и приема подтверждений.">XOUT</a>. </p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="afba414a32f10546b2be2a5ad35bcc9cc" name="afba414a32f10546b2be2a5ad35bcc9cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba414a32f10546b2be2a5ad35bcc9cc">&#9670;&nbsp;</a></span>ClientHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServerXOI::ClientHandler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция обработки клиента - отправка и прием сообщений. </p>
+<p >Обрабатывает клиента.</p>
+<p >Функция обрабатывает клиента, принимая и отправляя сообщения через сокеты fdxin и fdxout. Инициализирует маску на чтение для всех сокетов и максимум. В бесконечном цикле выполняет следующие действия:</p><ul>
+<li>Формирует сообщение из случайных символов.</li>
+<li>Если отправка сообщения успешна, устанавливает таймер на повторную отправку через 20 мсек.</li>
+<li>Печатает статистику, если прошло TSTAT мсек.</li>
+<li>Устанавливает маску на чтение для всех сокетов и вызывает функцию tselect() для ожидания событий.</li>
+<li>Если tselect() возвращает отрицательное значение, выводит ошибку и продолжает цикл.</li>
+<li>Если tselect() возвращает 0, выводит сообщение о том, что нет событий, и завершает функцию.</li>
+<li>Если сокет fdxout готов для чтения, вызывает функцию <a class="el" href="classXOUT.html#ac8eeace268597c6fe6fb79d9b7a79116" title="Считывание подтверждений.">RecvAck()</a> для получения подтверждений от клиента порта OUT.</li>
+<li>Если сокет fdxin готов для чтения, вызывает функцию Echo() для получения данных от клиента и отправки подтверждений IN.</li>
+<li>Если функция Echo() возвращает результат Break, завершает функцию.</li>
+<li>Если функция Echo() возвращает результат Continue, продолжает цикл.</li>
+<li>Если функция Echo() возвращает результат True, копирует полученное сообщение в переменную buf.</li>
+<li>Закрывает сокеты client_in и client_out.</li>
+</ul>
+<dl class="section return"><dt>Возвращает</dt><dd>Отсутствует. </dd></dl>
+
+</div>
+</div>
+<a id="a38327935a1a8a365d8c0a1b52ee19c35" name="a38327935a1a8a365d8c0a1b52ee19c35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38327935a1a8a365d8c0a1b52ee19c35">&#9670;&nbsp;</a></span>init_cnt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServerXOI::init_cnt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Стоп сервера. </p>
+<p >Обнуление счетчиков. </p>
+
+</div>
+</div>
+<a id="a0d2bf378489ea5e3a55405fbea1c53c2" name="a0d2bf378489ea5e3a55405fbea1c53c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d2bf378489ea5e3a55405fbea1c53c2">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServerXOI::Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Старт сервера. </p>
+<p >Запускает сервер.</p>
+<p >Функция запускает сервер на устройстве с заданным именем server_name и IP-адресом ip. Создает сокеты для прослушивания портов OUT и IN. Устанавливает маску на чтение для всех сокетов и максимум. В бесконечном цикле выполняет следующие действия:</p><ul>
+<li>Если флаг sock_in_flag и флаг sock_out_flag равны true, запускает функцию <a class="el" href="classServerXOI.html#afba414a32f10546b2be2a5ad35bcc9cc" title="Функция обработки клиента - отправка и прием сообщений.">ClientHandler()</a>, передавая сокеты client_in и client_out.</li>
+<li>Устанавливает маску на чтение для всех сокетов и вызывает функцию tselect() для ожидания событий.</li>
+<li>Если tselect() возвращает отрицательное значение, выводит ошибку и продолжает цикл.</li>
+<li>Если tselect() возвращает 0, выводит сообщение о том, что нет событий, и завершает функцию.</li>
+<li>Если сокет server_out готов для чтения и флаг sock_out_flag равен false, вызывает функцию <a class="el" href="classServerXOI.html#a07146acd78d7b3a0046760a53d278597" title="Подключение клиента к сокету.">AcceptToServer()</a> для принятия клиента на сокет server_out и установки флага sock_out_flag в true.</li>
+<li>Если сокет server_in готов для чтения и флаг sock_in_flag равен false, вызывает функцию <a class="el" href="classServerXOI.html#a07146acd78d7b3a0046760a53d278597" title="Подключение клиента к сокету.">AcceptToServer()</a> для принятия клиента на сокет server_in и установки флага sock_in_flag в true.</li>
+</ul>
+<dl class="section return"><dt>Возвращает</dt><dd>Отсутствует. </dd></dl>
+
+</div>
+</div>
+<a id="ae5d83e47a49b57931ca4c74a5a4b6a05" name="ae5d83e47a49b57931ca4c74a5a4b6a05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5d83e47a49b57931ca4c74a5a4b6a05">&#9670;&nbsp;</a></span>statistic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServerXOI::statistic </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вывод статистики. </p>
+<p >Выводит статистику и сохраняет в файл логов.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">safeCout</td><td>Объект <a class="el" href="classSafeCout.html">SafeCout</a> для безопасного вывода. </td></tr>
+    <tr><td class="paramname">device</td><td>Указатель на имя сетевой карты.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Этот метод выводит статистику и сохраняет ее в файл логов. Он использует переданный объект <a class="el" href="classSafeCout.html">SafeCout</a> для безопасного вывода. Метод собирает данные статистики в двумерный вектор и передает его в функцию createTable для создания таблицы. Затем метод выводит данные статистики в файл логов с использованием функции loger. После вывода статистики, метод обнуляет счетчики.</p>
+<p >Пример использования: </p><div class="fragment"><div class="line"><a class="code hl_class" href="classSafeCout.html">SafeCout</a> safeCout;</div>
+<div class="line"><span class="keywordtype">char</span>* device = <span class="stringliteral">&quot;eth0&quot;</span>;</div>
+<div class="line">Message message;</div>
+<div class="line">message.statistic(safeCout, device);</div>
+<div class="ttc" id="aclassSafeCout_html"><div class="ttname"><a href="classSafeCout.html">SafeCout</a></div><div class="ttdef"><b>Definition:</b> safecout.h:53</div></div>
+</div><!-- fragment --><p >В этом примере создается объект <a class="el" href="classSafeCout.html">SafeCout</a> для безопасного вывода, указывается имя сетевой карты и создается объект класса Message. Метод statistic используется для вывода статистики и сохранения ее в файл логов. Сначала данные статистики собираются в двумерный вектор, затем создается таблица с помощью функции createTable, и данные выводятся с использованием объекта <a class="el" href="classSafeCout.html">SafeCout</a>. Затем метод выводит данные статистики в файл логов с использованием функции loger. Наконец, метод обнуляет счетчики с помощью метода init_cnt. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>/home/yvzayets/Документы/GitHub/server_thread-pattern-/<a class="el" href="serverx_8h_source.html">serverx.h</a></li>
+<li>/home/yvzayets/Документы/GitHub/server_thread-pattern-/serverx.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

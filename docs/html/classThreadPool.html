@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Server TCP Multithread CPP: Класс ThreadPool</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Server TCP Multithread CPP<span id="projectnumber">&#160;0.8</span>
+   </div>
+   <div id="projectbrief">Многопоточный Ассинхронный TCP Сервер</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classThreadPool-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс ThreadPool</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="thread__pool_8h_source.html">thread_pool.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ac291710e33dbbed96ee20711080d506d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadPool.html#ac291710e33dbbed96ee20711080d506d">ThreadPool</a> (size_t)</td></tr>
+<tr class="memdesc:ac291710e33dbbed96ee20711080d506d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор класса <a class="el" href="classThreadPool.html">ThreadPool</a>.  <a href="classThreadPool.html#ac291710e33dbbed96ee20711080d506d">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac291710e33dbbed96ee20711080d506d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad47c34f4a3bf29bf96e6ddcfa472ddf3"><td class="memTemplParams" colspan="2">template&lt;class F , class... Args&gt; </td></tr>
+<tr class="memitem:ad47c34f4a3bf29bf96e6ddcfa472ddf3"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classThreadPool.html#ad47c34f4a3bf29bf96e6ddcfa472ddf3">add_task</a> (F &amp;&amp;f, Args &amp;&amp;...args) -&gt; std::future&lt; typename std::result_of&lt; F(Args...)&gt;::type &gt;</td></tr>
+<tr class="separator:ad47c34f4a3bf29bf96e6ddcfa472ddf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44d3d2ab618970605e684efc216655eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadPool.html#a44d3d2ab618970605e684efc216655eb">~ThreadPool</a> ()</td></tr>
+<tr class="separator:a44d3d2ab618970605e684efc216655eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p >Класс <a class="el" href="classThreadPool.html">ThreadPool</a> представляет пул потоков для выполнения задач.</p>
+<p >Пул потоков позволяет эффективно распределять задачи между несколькими потоками. Класс <a class="el" href="classThreadPool.html">ThreadPool</a> обеспечивает управление потоками, добавление задач в очередь и их выполнение. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="ac291710e33dbbed96ee20711080d506d" name="ac291710e33dbbed96ee20711080d506d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac291710e33dbbed96ee20711080d506d">&#9670;&nbsp;</a></span>ThreadPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ThreadPool::ThreadPool </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>threads</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор класса <a class="el" href="classThreadPool.html">ThreadPool</a>. </p>
+<p >Конструктор класса <a class="el" href="classThreadPool.html">ThreadPool</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>Количество потоков в пуле.</td></tr>
+    <tr><td class="paramname">threads</td><td>Количество потоков в пуле.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Конструктор инициализирует пул потоков с заданным количеством потоков. В каждом потоке выполняется бесконечный цикл, в котором извлекается задача из очереди <code>tasks</code> и выполняется с помощью указателя на функцию.</p>
+<p >Если пул остановлен (флаг <code>stop</code> установлен в <code>true</code>) и очередь задач <code>tasks</code> пуста, поток завершает свою работу и выходит из цикла. </p>
+
+</div>
+</div>
+<a id="a44d3d2ab618970605e684efc216655eb" name="a44d3d2ab618970605e684efc216655eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44d3d2ab618970605e684efc216655eb">&#9670;&nbsp;</a></span>~ThreadPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ThreadPool::~ThreadPool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Деструктор класса <a class="el" href="classThreadPool.html">ThreadPool</a>.</p>
+<p >Останавливает выполнение всех потоков пула и освобождает ресурсы.</p>
+<p >Деструктор класса <a class="el" href="classThreadPool.html">ThreadPool</a>.</p>
+<p >Останавливает выполнение всех потоков пула и освобождает ресурсы.</p>
+<p >Данный деструктор останавливает выполнение всех потоков пула. Сначала флаг <code>stop</code> устанавливается в значение <code>true</code> с помощью <code>std::unique_lock</code> и <code>std::mutex</code>. Это гарантирует, что никакие новые задачи не будут добавлены в очередь после этого момента.</p>
+<p >Затем вызывается <code>cond.notify_all()</code>, чтобы уведомить все потоки пула о необходимости завершить выполнение. Это позволяет потокам выйти из ожидания и проверить флаг <code>stop</code> для определения, нужно ли им завершить выполнение.</p>
+<p >После этого, в цикле происходит ожидание завершения всех потоков с помощью <code>thread.join()</code>. Это гарантирует, что все потоки будут завершены и ресурсы будут корректно освобождены.</p>
+<p >Таким образом, деструктор освобождает ресурсы и завершает работу пула потоков. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="ad47c34f4a3bf29bf96e6ddcfa472ddf3" name="ad47c34f4a3bf29bf96e6ddcfa472ddf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad47c34f4a3bf29bf96e6ddcfa472ddf3">&#9670;&nbsp;</a></span>add_task()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F , class... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ThreadPool::add_task </td>
+          <td>(</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; std::future&lt;typename std::result_of&lt;F(Args...)&gt;::type&gt;
+    </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Добавляет задачу в очередь пула потоков.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">F</td><td>Тип функции задачи. </td></tr>
+    <tr><td class="paramname">Args</td><td>Типы аргументов функции задачи. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Функция задачи. </td></tr>
+    <tr><td class="paramname">args</td><td>Аргументы функции задачи. Добавляет задачу в очередь пула потоков.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">F</td><td>Тип функции задачи. </td></tr>
+    <tr><td class="paramname">Args</td><td>Типы аргументов функции задачи. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Функция задачи. </td></tr>
+    <tr><td class="paramname">args</td><td>Аргументы функции задачи. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>Если добавление в очередь остановлено.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Данная функция принимает функцию задачи <code>f</code> и ее аргументы <code>args</code>. Она создает упакованную задачу <code>task</code> с помощью <code>std::packaged_task</code>, используя <code>std::bind</code> для связывания функции <code>f</code> с аргументами <code>args</code>. Затем создается лямбда-функция <code>func</code>, которая вызывает <code>task</code>. Задача <code>func</code> помещается в очередь <code>tasks</code> с помощью <code>emplace</code>. Если флаг <code>stop</code> установлен в <code>true</code>, выбрасывается исключение <code>std::runtime_error</code>. В конце, вызывается <code>cond.notify_one()</code>, чтобы уведомить один из потоков пула о наличии новой задачи. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>/home/yvzayets/Документы/GitHub/server_thread-pattern-/<a class="el" href="thread__pool_8h_source.html">thread_pool.h</a></li>
+<li>/home/yvzayets/Документы/GitHub/server_thread-pattern-/thread_pool.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

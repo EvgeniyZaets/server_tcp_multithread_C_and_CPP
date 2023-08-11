@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Server TCP Multithread CPP: Структура msgrec_t</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Server TCP Multithread CPP<span id="projectnumber">&#160;0.8</span>
+   </div>
+   <div id="projectbrief">Многопоточный Ассинхронный TCP Сервер</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="structmsgrec__t-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Структура msgrec_t</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Структура посылаемого сообщения.  
+ <a href="structmsgrec__t.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="serverx_8h_source.html">serverx.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса msgrec_t:</div>
+<div class="dyncontent">
+<div class="center"><img src="structmsgrec__t__coll__graph.png" border="0" usemap="#amsgrec__t_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:a91439f494c87ce7d8f6c9eb7ab2999a0"><td class="memItemLeft" align="right" valign="top"><a id="a91439f494c87ce7d8f6c9eb7ab2999a0" name="a91439f494c87ce7d8f6c9eb7ab2999a0"></a>
+<a class="el" href="structpacket__t.html">packet_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pkt</b></td></tr>
+<tr class="memdesc:a91439f494c87ce7d8f6c9eb7ab2999a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Указатель на сохраненное сообщение. <br /></td></tr>
+<tr class="separator:a91439f494c87ce7d8f6c9eb7ab2999a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cacc4314c52a7003bfe6bc4aa5a6552"><td class="memItemLeft" align="right" valign="top"><a id="a3cacc4314c52a7003bfe6bc4aa5a6552" name="a3cacc4314c52a7003bfe6bc4aa5a6552"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>id</b></td></tr>
+<tr class="memdesc:a3cacc4314c52a7003bfe6bc4aa5a6552"><td class="mdescLeft">&#160;</td><td class="mdescRight">Идентификатор таймера - т.е. таймера ретрансмиссии. <br /></td></tr>
+<tr class="separator:a3cacc4314c52a7003bfe6bc4aa5a6552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c132dd0460165e589fb3bcedeb49a24"><td class="memItemLeft" align="right" valign="top"><a id="a7c132dd0460165e589fb3bcedeb49a24" name="a7c132dd0460165e589fb3bcedeb49a24"></a>
+struct timeval&#160;</td><td class="memItemRight" valign="bottom"><b>start</b></td></tr>
+<tr class="memdesc:a7c132dd0460165e589fb3bcedeb49a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Время для контроля. <br /></td></tr>
+<tr class="separator:a7c132dd0460165e589fb3bcedeb49a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p >Структура посылаемого сообщения. </p>
+<p >Эта структура содержит указатель на сохраненное сообщение (пакет) и идентификатор таймера. Поле <code>pkt</code> является указателем на сохраненное сообщение типа <code><a class="el" href="structpacket__t.html" title="Структура пакета сообщения.">packet_t</a></code>. Поле <code>id</code> представляет собой идентификатор таймера, который используется для ретрансмиссии. Поле <code>start</code> представляет собой структуру <code>timeval</code> для контроля времени. </p>
+</div><hr/>Объявления и описания членов структуры находятся в файле:<ul>
+<li>/home/yvzayets/Документы/GitHub/server_thread-pattern-/<a class="el" href="serverx_8h_source.html">serverx.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

@@ -1,0 +1,13 @@
+digraph "XOUT"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="XOUT",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Класс для отправки данных в сокет и приема подтверждений."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" mr" ,fontname="Helvetica"];
+  Node2 [label="msgrec_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmsgrec__t.html",tooltip="Структура посылаемого сообщения."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pkt" ,fontname="Helvetica"];
+  Node3 [label="packet_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structpacket__t.html",tooltip="Структура пакета сообщения."];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" TimeXout" ,fontname="Helvetica"];
+  Node4 [label="TimerManager",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTimerManager.html",tooltip=" "];
+}

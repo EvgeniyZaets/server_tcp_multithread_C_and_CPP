@@ -1,0 +1,186 @@
+\hypertarget{classTimerManager}{}\doxysection{Класс Timer\+Manager}
+\label{classTimerManager}\index{TimerManager@{TimerManager}}
+
+
+{\ttfamily \#include $<$timemanager.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classTimerManager_ae73c759756906d996dd9dfa145dd2700}{timeout}} (std\+::function$<$ void()$>$ func, int ms)
+\item 
+void \mbox{\hyperlink{classTimerManager_a12ffbdd981cd264bb6b6548a988a828d}{unitimeout}} (unsigned int id)
+\item 
+int \mbox{\hyperlink{classTimerManager_a8531f63d4711642f24c297fe8988d283}{tselect}} (int maxpl, fd\+\_\+set $\ast$re, fd\+\_\+set $\ast$we, fd\+\_\+set $\ast$ee)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс \mbox{\hyperlink{classTimerManager}{Timer\+Manager}} управляет таймерами и событиями.
+
+Класс \mbox{\hyperlink{classTimerManager}{Timer\+Manager}} предоставляет функциональность для установки таймеров и выполнения заданных функций по истечении установленного времени. Он использует структуру Timer\+Event для представления каждого таймера, содержащую информацию о времени, функции и идентификаторе таймера. Класс \mbox{\hyperlink{classTimerManager}{Timer\+Manager}} имеет приватные поля active и free\+\_\+list для хранения активных и свободных таймеров соответственно. Также он имеет приватное поле next\+\_\+id для генерации уникальных идентификаторов таймеров.
+
+Функции класса \mbox{\hyperlink{classTimerManager}{Timer\+Manager}}\+:
+\begin{DoxyItemize}
+\item unsigned int \mbox{\hyperlink{classTimerManager_ae73c759756906d996dd9dfa145dd2700}{timeout(std\+::function$<$void()$>$ func, int ms)}}\+: Устанавливает таймер с заданной функцией и временем в миллисекундах.
+\item void \mbox{\hyperlink{classTimerManager_a12ffbdd981cd264bb6b6548a988a828d}{unitimeout(unsigned int id)}}\+: Отменяет таймер с указанным идентификатором.
+\item int \mbox{\hyperlink{classTimerManager_a8531f63d4711642f24c297fe8988d283}{tselect(int maxpl, fd\+\_\+set $\ast$re, fd\+\_\+set $\ast$we, fd\+\_\+set $\ast$ee)}}\+: Выполняет выборку событий ввода-\/вывода (I/O) с использованием таймеров.
+\end{DoxyItemize}
+
+Пример использования\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classTimerManager}{TimerManager}} timerManager; }
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} timerId = timerManager.\mbox{\hyperlink{classTimerManager_ae73c759756906d996dd9dfa145dd2700}{timeout}}([]()\{ }
+\DoxyCodeLine{    \textcolor{comment}{// Код, который нужно выполнить по истечении времени }}
+\DoxyCodeLine{\}, 1000); \textcolor{comment}{// Устанавливаем таймер на 1 секунду }}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Отменяем таймер }}
+\DoxyCodeLine{timerManager.\mbox{\hyperlink{classTimerManager_a12ffbdd981cd264bb6b6548a988a828d}{unitimeout}}(timerId); }
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Выполняем выборку событий I/O с использованием таймеров }}
+\DoxyCodeLine{\textcolor{keywordtype}{int} maxpl = ...; \textcolor{comment}{// Максимальное значение файлового дескриптора }}
+\DoxyCodeLine{fd\_set re, we, ee; }
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600b}{result}} = timerManager.\mbox{\hyperlink{classTimerManager_a8531f63d4711642f24c297fe8988d283}{tselect}}(maxpl, \&re, \&we, \&ee); }
+
+\end{DoxyCode}
+
+
+В этом примере создается объект класса \mbox{\hyperlink{classTimerManager}{Timer\+Manager}} и устанавливается таймер на 1 секунду с заданной функцией. Затем таймер отменяется с использованием идентификатора таймера. Наконец, выполняется выборка событий I/O с использованием таймеров. 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classTimerManager_ae73c759756906d996dd9dfa145dd2700}\label{classTimerManager_ae73c759756906d996dd9dfa145dd2700}} 
+\index{TimerManager@{TimerManager}!timeout@{timeout}}
+\index{timeout@{timeout}!TimerManager@{TimerManager}}
+\doxysubsubsection{\texorpdfstring{timeout()}{timeout()}}
+{\footnotesize\ttfamily unsigned int Timer\+Manager\+::timeout (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$}]{func,  }\item[{int}]{ms }\end{DoxyParamCaption})}
+
+Устанавливает таймер с заданной функцией и временем в миллисекундах.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em func} & Функция, которая будет выполнена по истечении времени. \\
+\hline
+{\em ms} & Время в миллисекундах, через которое должна быть выполнена функция. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Идентификатор установленного таймера.
+\end{DoxyReturn}
+Устанавливает таймер с заданной функцией и временем в миллисекундах.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em func} & Функция, которая будет выполнена по истечении времени. \\
+\hline
+{\em ms} & Время в миллисекундах. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Идентификатор установленного таймера.
+\end{DoxyReturn}
+Эта функция выделяет новый таймер из свободного списка, устанавливает заданную функцию и время и добавляет таймер в активный список. Таймеры в активном списке отсортированы по времени, поэтому новый таймер вставляется в правильное место в списке. Функция возвращает идентификатор установленного таймера.
+
+Пример использования\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} timerId = \mbox{\hyperlink{classTimerManager_ae73c759756906d996dd9dfa145dd2700}{timeout}}([]()\{}
+\DoxyCodeLine{    \textcolor{comment}{// Код, который нужно выполнить по истечении времени}}
+\DoxyCodeLine{\}, 1000); \textcolor{comment}{// Устанавливаем таймер на 1 секунду}}
+
+\end{DoxyCode}
+
+
+В этом примере устанавливается таймер на 1 секунду с заданной функцией. Идентификатор таймера сохраняется в переменную timer\+Id для дальнейшего использования. \mbox{\Hypertarget{classTimerManager_a8531f63d4711642f24c297fe8988d283}\label{classTimerManager_a8531f63d4711642f24c297fe8988d283}} 
+\index{TimerManager@{TimerManager}!tselect@{tselect}}
+\index{tselect@{tselect}!TimerManager@{TimerManager}}
+\doxysubsubsection{\texorpdfstring{tselect()}{tselect()}}
+{\footnotesize\ttfamily int Timer\+Manager\+::tselect (\begin{DoxyParamCaption}\item[{int}]{maxpl,  }\item[{fd\+\_\+set $\ast$}]{re,  }\item[{fd\+\_\+set $\ast$}]{we,  }\item[{fd\+\_\+set $\ast$}]{ee }\end{DoxyParamCaption})}
+
+Выполняет выборку событий ввода-\/вывода (I/O) с использованием таймеров.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em maxpl} & Максимальное значение файлового дескриптора. \\
+\hline
+{\em re} & Маска набора дескрипторов на чтение. \\
+\hline
+{\em we} & Маска набора дескрипторов на запись. \\
+\hline
+{\em ee} & Маска набора дескрипторов на ошибку. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Результат выполнения функции \mbox{\hyperlink{classTimerManager_a8531f63d4711642f24c297fe8988d283}{tselect()}}.
+\end{DoxyReturn}
+Выполняет выборку событий ввода-\/вывода (I/O) с использованием таймеров.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em maxpl} & Максимальное значение файлового дескриптора. \\
+\hline
+{\em re} & Указатель на набор файловых дескрипторов, доступных для чтения. \\
+\hline
+{\em we} & Указатель на набор файловых дескрипторов, доступных для записи. \\
+\hline
+{\em ee} & Указатель на набор файловых дескрипторов, доступных для исключений. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Количество готовых файловых дескрипторов, -\/1 в случае ошибки.
+\end{DoxyReturn}
+Эта функция выполняет выборку событий ввода-\/вывода (I/O) с использованием таймеров. Она использует функцию select для ожидания готовности файловых дескрипторов к чтению, записи или обнаружению исключений. При наступлении просроченного таймера, функция выполняет соответствующую функцию, связанную с таймером. Функция возвращает количество готовых файловых дескрипторов или -\/1 в случае ошибки.
+
+Пример использования\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} maxpl = ...; \textcolor{comment}{// Максимальное значение файлового дескриптора}}
+\DoxyCodeLine{fd\_set re, we, ee;}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600b}{result}} = \mbox{\hyperlink{classTimerManager_a8531f63d4711642f24c297fe8988d283}{tselect}}(maxpl, \&re, \&we, \&ee);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (\mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600b}{result}} > 0) \{}
+\DoxyCodeLine{    \textcolor{comment}{// Обработка готовых файловых дескрипторов}}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600b}{result}} == 0) \{}
+\DoxyCodeLine{    \textcolor{comment}{// Нет готовых файловых дескрипторов}}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{    \textcolor{comment}{// Ошибка}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+В этом примере функция tselect выполняет выборку событий I/O с использованием таймеров для максимального значения файлового дескриптора maxpl. После выполнения функции, результат сохраняется в переменную result, и затем проверяется для определения наличия готовых файловых дескрипторов или возникновения ошибки. Пользователь может передать наборы файловых дескрипторов re, we и ee для указания интересующих событий. \mbox{\Hypertarget{classTimerManager_a12ffbdd981cd264bb6b6548a988a828d}\label{classTimerManager_a12ffbdd981cd264bb6b6548a988a828d}} 
+\index{TimerManager@{TimerManager}!unitimeout@{unitimeout}}
+\index{unitimeout@{unitimeout}!TimerManager@{TimerManager}}
+\doxysubsubsection{\texorpdfstring{unitimeout()}{unitimeout()}}
+{\footnotesize\ttfamily void Timer\+Manager\+::unitimeout (\begin{DoxyParamCaption}\item[{unsigned int}]{id }\end{DoxyParamCaption})}
+
+Отменяет таймер с указанным идентификатором.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em id} & Идентификатор таймера, который нужно отменить. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Отсутствует.
+\end{DoxyReturn}
+Отменяет таймер с указанным идентификатором.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em id} & Идентификатор таймера.\\
+\hline
+\end{DoxyParams}
+Эта функция ищет таймер с указанным идентификатором в активном списке и удаляет его. Удаленный таймер добавляется в свободный список для повторного использования. Если таймер с указанным идентификатором не найден, выбрасывается исключение std\+::runtime\+\_\+error.
+
+Пример использования\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} timerId = ...; \textcolor{comment}{// Идентификатор устанавливаемого таймера}}
+\DoxyCodeLine{\mbox{\hyperlink{classTimerManager_a12ffbdd981cd264bb6b6548a988a828d}{unitimeout}}(timerId); \textcolor{comment}{// Отменяем таймер}}
+
+\end{DoxyCode}
+
+
+В этом примере отменяется таймер с указанным идентификатором. Пользователь должен передать корректный идентификатор таймера для отмены. Если таймер с указанным идентификатором не найден, будет выброшено исключение std\+::runtime\+\_\+error. 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+/home/yvzayets/Документы/\+Git\+Hub/server\+\_\+thread-\/pattern-\//timemanager.\+h\item 
+/home/yvzayets/Документы/\+Git\+Hub/server\+\_\+thread-\/pattern-\//timemanager.\+cpp\end{DoxyCompactItemize}

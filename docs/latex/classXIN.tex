@@ -1,0 +1,76 @@
+\hypertarget{classXIN}{}\doxysection{Класс XIN}
+\label{classXIN}\index{XIN@{XIN}}
+
+
+Класс для приема данных и отправки подтверждений.  
+
+
+
+
+{\ttfamily \#include $<$serverx.\+h$>$}
+
+
+
+Граф наследования\+:XIN\+:
+% FIG 0
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classXIN_a2cfa83bc7b664e298b0a9108eaa5bbec}\label{classXIN_a2cfa83bc7b664e298b0a9108eaa5bbec}} 
+{\bfseries XIN} (SOCKET fd)
+\item 
+\mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600b}{result}} \mbox{\hyperlink{classXIN_aa8585262a15a944066c88ae7e4d78a64}{Eсho}} ()
+\begin{DoxyCompactList}\small\item\em Чтение сообщений и отправка подтверждений. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classXIN_a146fe87c77192031f6579d271926c533}\label{classXIN_a146fe87c77192031f6579d271926c533}} 
+char {\bfseries msgin} \mbox{[}BUF\mbox{]}
+\begin{DoxyCompactList}\small\item\em Массив последнего сообщения. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classXIN_ad354987d0c134c01218ef3cd02979ad6}\label{classXIN_ad354987d0c134c01218ef3cd02979ad6}} 
+u\+\_\+int32\+\_\+t {\bfseries cn\+\_\+in}
+\begin{DoxyCompactList}\small\item\em Получено всего сообщений от клиента IN. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXIN_abcfb64b6cfc714cda5e53387f61ecf1c}\label{classXIN_abcfb64b6cfc714cda5e53387f61ecf1c}} 
+u\+\_\+int32\+\_\+t {\bfseries cn\+\_\+ack\+\_\+in}
+\begin{DoxyCompactList}\small\item\em Отправлено ack в IN. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXIN_aac32f7042baca81941cc7012ea4cdc47}\label{classXIN_aac32f7042baca81941cc7012ea4cdc47}} 
+u\+\_\+int32\+\_\+t {\bfseries Lost}
+\begin{DoxyCompactList}\small\item\em Количество неподтвержденных ack в IN. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXIN_a7e3b2ff7552cc6163214ecfd08ec02c6}\label{classXIN_a7e3b2ff7552cc6163214ecfd08ec02c6}} 
+SOCKET {\bfseries fdxin}
+\begin{DoxyCompactList}\small\item\em Сокет. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXIN_a11fa3a934c258b3bb7b578ccdad69eb5}\label{classXIN_a11fa3a934c258b3bb7b578ccdad69eb5}} 
+int {\bfseries size\+\_\+in}
+\begin{DoxyCompactList}\small\item\em Размер массива по умолчанию равен BUF. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для приема данных и отправки подтверждений. 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classXIN_aa8585262a15a944066c88ae7e4d78a64}\label{classXIN_aa8585262a15a944066c88ae7e4d78a64}} 
+\index{XIN@{XIN}!Eсho@{Eсho}}
+\index{Eсho@{Eсho}!XIN@{XIN}}
+\doxysubsubsection{\texorpdfstring{Eсho()}{Eсho()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{serverx_8h_a937d4dd628a8858b443a399410d2600b}{result}} XIN\+::\+Eсho (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Чтение сообщений и отправка подтверждений. 
+
+Функция обработки полученного сообщения и отправки подтверждения.
+
+Функция считывает сообщение из сокета fdxin и сохраняет его в поле msgin. Если считанное количество байт равно 0, то функция возвращает результат Break, иначе проверяется условие для переключения на другую сеть. Если считанное количество байт меньше 0, то функция возвращает результат Break. Если Lost\+Ack не равно 0, то случайным образом откидывается сообщение, и функция возвращает результат Continue. Увеличивается счетчик cn\+\_\+in, который отслеживает количество сообщений от клиента. Затем создается подтверждение ACK, которое состоит из символа ACK и признака сообщения, сдвинутого на один символ вправо. Подтверждение отправляется обратно в сокет fdxin. Если отправка не удалась, выводится ошибка. Увеличивается счетчик cn\+\_\+ack\+\_\+in, отслеживающий количество отправленных подтверждений. Возвращается результат True.
+
+\begin{DoxyReturn}{Возвращает}
+Результат операции\+: Break, Continue или True. 
+\end{DoxyReturn}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+/home/yvzayets/Документы/\+Git\+Hub/server\+\_\+thread-\/pattern-\//\mbox{\hyperlink{serverx_8h}{serverx.\+h}}\item 
+/home/yvzayets/Документы/\+Git\+Hub/server\+\_\+thread-\/pattern-\//serverx.\+cpp\end{DoxyCompactItemize}

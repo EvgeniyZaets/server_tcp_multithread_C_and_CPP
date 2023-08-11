@@ -1,0 +1,98 @@
+\hypertarget{classSafeCout}{}\doxysection{Класс Safe\+Cout}
+\label{classSafeCout}\index{SafeCout@{SafeCout}}
+
+
+{\ttfamily \#include $<$safecout.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classSafeCout}{Safe\+Cout}} \& \mbox{\hyperlink{classSafeCout_a20f3333872b13e3024f176bb985212c5}{operator$<$$<$}} (const T \&value)
+\item 
+\mbox{\hyperlink{classSafeCout}{Safe\+Cout}} \& \mbox{\hyperlink{classSafeCout_abbba909a2dde4b6d052260467b366a3e}{operator$<$$<$}} (const std\+::string \&value)
+\item 
+\mbox{\hyperlink{classSafeCout}{Safe\+Cout}} \& \mbox{\hyperlink{classSafeCout_a061d4e4d0644ddcce338624792937fcf}{operator$<$$<$}} (std\+::ostream \&($\ast$manipulator)(std\+::ostream \&))
+\item 
+\mbox{\Hypertarget{classSafeCout_ab2331e7901c46165b1331960975c2270}\label{classSafeCout_ab2331e7901c46165b1331960975c2270}} 
+void {\bfseries notify\+All} ()
+\item 
+\mbox{\Hypertarget{classSafeCout_a79a219610c7e41f75a900cf388b3a7ba}\label{classSafeCout_a79a219610c7e41f75a900cf388b3a7ba}} 
+void {\bfseries wait} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс \mbox{\hyperlink{classSafeCout}{Safe\+Cout}} обеспечивает безопасный вывод в стандартный поток вывода (cout) с использованием мьютекса.
+
+Класс \mbox{\hyperlink{classSafeCout}{Safe\+Cout}} предоставляет функциональность для безопасного вывода данных в стандартный поток вывода (cout) с использованием мьютекса. Он перегружает оператор \char`\"{}$<$$<$\char`\"{} для различных типов данных, а также для строк и манипуляторов потока. При использовании оператора \char`\"{}$<$$<$\char`\"{} объекта \mbox{\hyperlink{classSafeCout}{Safe\+Cout}}, мьютекс блокируется, чтобы гарантировать безопасность вывода в многопоточной среде.
+
+Пример использования\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classSafeCout}{SafeCout}} safeCout;}
+\DoxyCodeLine{safeCout << \textcolor{stringliteral}{"{}Hello, world!"{}} << std::endl;}
+
+\end{DoxyCode}
+
+
+В этом примере создается объект класса \mbox{\hyperlink{classSafeCout}{Safe\+Cout}} и используется оператор \char`\"{}$<$$<$\char`\"{} для безопасного вывода строки \char`\"{}\+Hello, world!\char`\"{} и символа новой строки. Мьютекс блокируется во время вывода, чтобы гарантировать безопасность вывода в многопоточной среде. 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classSafeCout_abbba909a2dde4b6d052260467b366a3e}\label{classSafeCout_abbba909a2dde4b6d052260467b366a3e}} 
+\index{SafeCout@{SafeCout}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!SafeCout@{SafeCout}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSafeCout}{Safe\+Cout}} \& Safe\+Cout\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Перегруженный оператор \char`\"{}$<$$<$\char`\"{} для вывода строки в стандартный поток вывода.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em value} & Строка для вывода. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Ссылка на объект \mbox{\hyperlink{classSafeCout}{Safe\+Cout}}.
+\end{DoxyReturn}
+Этот оператор перегружен для вывода строки в стандартный поток вывода. Мьютекс блокируется перед выводом, чтобы гарантировать безопасность вывода в многопоточной среде. Возвращается ссылка на объект \mbox{\hyperlink{classSafeCout}{Safe\+Cout}} для поддержки цепочки операторов. \mbox{\Hypertarget{classSafeCout_a20f3333872b13e3024f176bb985212c5}\label{classSafeCout_a20f3333872b13e3024f176bb985212c5}} 
+\index{SafeCout@{SafeCout}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!SafeCout@{SafeCout}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classSafeCout}{Safe\+Cout}} \& Safe\+Cout\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Перегруженный оператор \char`\"{}$<$$<$\char`\"{} для вывода значения в стандартный поток вывода.
+
+
+\begin{DoxyTemplParams}{Параметры шаблона}
+{\em T} & Тип значения для вывода. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Аргументы}
+{\em value} & Значение для вывода. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Ссылка на объект \mbox{\hyperlink{classSafeCout}{Safe\+Cout}}.
+\end{DoxyReturn}
+Этот оператор перегружен для вывода значения заданного типа в стандартный поток вывода. Мьютекс блокируется перед выводом, чтобы гарантировать безопасность вывода в многопоточной среде. Возвращается ссылка на объект \mbox{\hyperlink{classSafeCout}{Safe\+Cout}} для поддержки цепочки операторов. \mbox{\Hypertarget{classSafeCout_a061d4e4d0644ddcce338624792937fcf}\label{classSafeCout_a061d4e4d0644ddcce338624792937fcf}} 
+\index{SafeCout@{SafeCout}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!SafeCout@{SafeCout}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSafeCout}{Safe\+Cout}} \& Safe\+Cout\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&($\ast$)(std\+::ostream \&)}]{manipulator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Перегруженный оператор \char`\"{}$<$$<$\char`\"{} для вывода манипулятора потока в стандартный поток вывода.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em manipulator} & Манипулятор потока для вывода. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Ссылка на объект \mbox{\hyperlink{classSafeCout}{Safe\+Cout}}.
+\end{DoxyReturn}
+Этот оператор перегружен для вывода манипулятора потока в стандартный поток вывода. Мьютекс блокируется перед выводом, чтобы гарантировать безопасность вывода в многопоточной среде. Возвращается ссылка на объект \mbox{\hyperlink{classSafeCout}{Safe\+Cout}} для поддержки цепочки операторов. 
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+/home/yvzayets/Документы/\+Git\+Hub/server\+\_\+thread-\/pattern-\//safecout.\+h\end{DoxyCompactItemize}

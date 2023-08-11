@@ -1,0 +1,51 @@
+\hypertarget{thread__pool_8h_source}{}\doxysection{thread\+\_\+pool.\+h}
+\label{thread__pool_8h_source}\index{/home/yvzayets/Документы/GitHub/server\_thread-\/pattern-\//thread\_pool.h@{/home/yvzayets/Документы/GitHub/server\_thread-\/pattern-\//thread\_pool.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef THREAD\_POOL\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define THREAD\_POOL\_H}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <future>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <condition\_variable>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classThreadPool}{ThreadPool}}\{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27     \mbox{\hyperlink{classThreadPool_ac291710e33dbbed96ee20711080d506d}{ThreadPool}}(\textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{55     \textcolor{keyword}{template} <\textcolor{keyword}{class }F, \textcolor{keyword}{class}... Args>}
+\DoxyCodeLine{56     \textcolor{keyword}{auto} \mbox{\hyperlink{classThreadPool_ad47c34f4a3bf29bf96e6ddcfa472ddf3}{add\_task}}(F \&\&f, Args \&\&...args) -\/> std::future<\textcolor{keyword}{typename} std::result\_of<F(Args...)>::type>}
+\DoxyCodeLine{57     \{}
+\DoxyCodeLine{58         \textcolor{keyword}{using }return\_type = \textcolor{keyword}{typename} std::result\_of<F(Args...)>::type;}
+\DoxyCodeLine{59         \textcolor{keyword}{auto} task = std::make\_shared<std::packaged\_task<void()>>(std::bind(std::forward<F>(f), std::forward<Args>(args)...));}
+\DoxyCodeLine{60         \textcolor{keyword}{auto} task = std::make\_shared<std::packaged\_task<return\_type()>>(std::bind(std::forward<F>(f), std::forward<Args>(args)...));}
+\DoxyCodeLine{61         \textcolor{keyword}{auto} res = task-\/>get\_future();}
+\DoxyCodeLine{62         \textcolor{keyword}{auto} func = [task]()\{(*task)();\};}
+\DoxyCodeLine{63         \{}
+\DoxyCodeLine{64             std::unique\_lock<std::mutex> lock(mtx);}
+\DoxyCodeLine{65             \textcolor{keywordflow}{if}(stop)}
+\DoxyCodeLine{66                 \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}добавление в очередь остановлено"{}});}
+\DoxyCodeLine{67             tasks.emplace(std::make\_shared<std::function<\textcolor{keywordtype}{void}()>>(func));}
+\DoxyCodeLine{68         \}}
+\DoxyCodeLine{69         cond.notify\_one();}
+\DoxyCodeLine{70         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{71     \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{78     \mbox{\hyperlink{classThreadPool_a44d3d2ab618970605e684efc216655eb}{\string~ThreadPool}}();}
+\DoxyCodeLine{79 \textcolor{keyword}{private}:}
+\DoxyCodeLine{80     std::vector<std::thread> workers; }
+\DoxyCodeLine{81     std::queue<std::shared\_ptr<std::function<void()>>> tasks; }
+\DoxyCodeLine{82     std::mutex mtx; }
+\DoxyCodeLine{83     std::condition\_variable cond; }
+\DoxyCodeLine{84     std::atomic<bool> stop; }
+\DoxyCodeLine{85 \};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// THREAD\_POOL\_H}}
+
+\end{DoxyCode}

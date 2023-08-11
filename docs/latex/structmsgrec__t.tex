@@ -1,0 +1,37 @@
+\hypertarget{structmsgrec__t}{}\doxysection{Структура msgrec\+\_\+t}
+\label{structmsgrec__t}\index{msgrec\_t@{msgrec\_t}}
+
+
+Структура посылаемого сообщения.  
+
+
+
+
+{\ttfamily \#include $<$serverx.\+h$>$}
+
+
+
+Граф связей класса msgrec\+\_\+t\+:
+% FIG 0
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmsgrec__t_a91439f494c87ce7d8f6c9eb7ab2999a0}\label{structmsgrec__t_a91439f494c87ce7d8f6c9eb7ab2999a0}} 
+\mbox{\hyperlink{structpacket__t}{packet\+\_\+t}} {\bfseries pkt}
+\begin{DoxyCompactList}\small\item\em Указатель на сохраненное сообщение. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structmsgrec__t_a3cacc4314c52a7003bfe6bc4aa5a6552}\label{structmsgrec__t_a3cacc4314c52a7003bfe6bc4aa5a6552}} 
+unsigned int {\bfseries id}
+\begin{DoxyCompactList}\small\item\em Идентификатор таймера -\/ т.\+е. таймера ретрансмиссии. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structmsgrec__t_a7c132dd0460165e589fb3bcedeb49a24}\label{structmsgrec__t_a7c132dd0460165e589fb3bcedeb49a24}} 
+struct timeval {\bfseries start}
+\begin{DoxyCompactList}\small\item\em Время для контроля. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Структура посылаемого сообщения. 
+
+Эта структура содержит указатель на сохраненное сообщение (пакет) и идентификатор таймера. Поле {\ttfamily pkt} является указателем на сохраненное сообщение типа {\ttfamily \mbox{\hyperlink{structpacket__t}{packet\+\_\+t}}}. Поле {\ttfamily id} представляет собой идентификатор таймера, который используется для ретрансмиссии. Поле {\ttfamily start} представляет собой структуру {\ttfamily timeval} для контроля времени. 
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+/home/yvzayets/Документы/\+Git\+Hub/server\+\_\+thread-\/pattern-\//\mbox{\hyperlink{serverx_8h}{serverx.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['safecout_0',['SafeCout',['../classSafeCout.html',1,'']]],
+  ['scout_1',['scout',['../classServerXOI.html#a469f03d0e3f097a5cddd92157b5ab577',1,'ServerXOI']]],
+  ['sendmsg_2',['SendMsg',['../classXOUT.html#a0662e9eb15e9b457cd9876be62f56bd9',1,'XOUT']]],
+  ['server_5fin_3',['server_in',['../classServerXOI.html#a8e830d0d297b038fca31e20085c86102',1,'ServerXOI']]],
+  ['server_5fname_4',['server_name',['../classServerXOI.html#a21019600426a6db226807c24b3b33f59',1,'ServerXOI']]],
+  ['server_5fout_5',['server_out',['../classServerXOI.html#a5c9856dfc4535c995f62fd06a0f3f7c1',1,'ServerXOI']]],
+  ['server_5ftcp_5fmultithread_5fcpp_6',['server_tcp_multithread_CPP',['../md__home_yvzayets__xD0_x94_xD0_xBE_xD0_xBA_xD1_x83_xD0_xBC_xD0_xB5_xD0_xBD_xD1_x82_xD1_x8B_GitHub_server_thread_pattern__README.html',1,'']]],
+  ['serverx_2eh_7',['serverx.h',['../serverx_8h.html',1,'']]],
+  ['serverxoi_8',['ServerXOI',['../classServerXOI.html',1,'']]],
+  ['settimeout_9',['setTimeOut',['../classXOUT.html#a762c31e025feecde60af6721c7109d5f',1,'XOUT']]],
+  ['settimeoutmax_10',['setTimeOutMax',['../classXOUT.html#a8b027362a06c3937a4606147d5ddaa5a',1,'XOUT']]],
+  ['size_5fin_11',['size_in',['../classXIN.html#a11fa3a934c258b3bb7b578ccdad69eb5',1,'XIN']]],
+  ['sock_5fin_5fflag_12',['sock_in_flag',['../classServerXOI.html#a072df61b21ed47b36fbbd8c8d6e97d50',1,'ServerXOI']]],
+  ['sock_5fout_5fflag_13',['sock_out_flag',['../classServerXOI.html#a07c23fc4e01a2766389ba9559bb7bce6',1,'ServerXOI']]],
+  ['sr_5ftime_14',['sr_time',['../classXOUT.html#a924c9f1da54af3d282fc834f98ec5071',1,'XOUT']]],
+  ['start_15',['start',['../structmsgrec__t.html#a7c132dd0460165e589fb3bcedeb49a24',1,'msgrec_t']]],
+  ['start_16',['Start',['../classServerXOI.html#a0d2bf378489ea5e3a55405fbea1c53c2',1,'ServerXOI']]],
+  ['statistic_17',['statistic',['../classServerXOI.html#ae5d83e47a49b57931ca4c74a5a4b6a05',1,'ServerXOI']]]
+];

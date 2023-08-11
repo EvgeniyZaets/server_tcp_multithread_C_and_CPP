@@ -1,0 +1,19 @@
+digraph "ServerXOI"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="ServerXOI",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Класс сервера с асинхронным вводом XIN и выводом XOUT."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="XOUT",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXOUT.html",tooltip="Класс для отправки данных в сокет и приема подтверждений."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" mr" ,fontname="Helvetica"];
+  Node3 [label="msgrec_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmsgrec__t.html",tooltip="Структура посылаемого сообщения."];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pkt" ,fontname="Helvetica"];
+  Node4 [label="packet_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structpacket__t.html",tooltip="Структура пакета сообщения."];
+  Node5 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" TimeXout" ,fontname="Helvetica"];
+  Node5 [label="TimerManager",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTimerManager.html",tooltip=" "];
+  Node6 -> Node1 [dir="back",color="firebrick4",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="XIN",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXIN.html",tooltip="Класс для приема данных и отправки подтверждений."];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" scout" ,fontname="Helvetica"];
+  Node7 [label="SafeCout",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSafeCout.html",tooltip=" "];
+}

@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Server TCP Multithread CPP: Класс TimerManager</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Server TCP Multithread CPP<span id="projectnumber">&#160;0.8</span>
+   </div>
+   <div id="projectbrief">Многопоточный Ассинхронный TCP Сервер</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classTimerManager-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс TimerManager</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="timemanager_8h_source.html">timemanager.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ae73c759756906d996dd9dfa145dd2700"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimerManager.html#ae73c759756906d996dd9dfa145dd2700">timeout</a> (std::function&lt; void()&gt; func, int ms)</td></tr>
+<tr class="separator:ae73c759756906d996dd9dfa145dd2700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ffbdd981cd264bb6b6548a988a828d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimerManager.html#a12ffbdd981cd264bb6b6548a988a828d">unitimeout</a> (unsigned int id)</td></tr>
+<tr class="separator:a12ffbdd981cd264bb6b6548a988a828d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8531f63d4711642f24c297fe8988d283"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimerManager.html#a8531f63d4711642f24c297fe8988d283">tselect</a> (int maxpl, fd_set *re, fd_set *we, fd_set *ee)</td></tr>
+<tr class="separator:a8531f63d4711642f24c297fe8988d283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p >Класс <a class="el" href="classTimerManager.html">TimerManager</a> управляет таймерами и событиями.</p>
+<p >Класс <a class="el" href="classTimerManager.html">TimerManager</a> предоставляет функциональность для установки таймеров и выполнения заданных функций по истечении установленного времени. Он использует структуру TimerEvent для представления каждого таймера, содержащую информацию о времени, функции и идентификаторе таймера. Класс <a class="el" href="classTimerManager.html">TimerManager</a> имеет приватные поля active и free_list для хранения активных и свободных таймеров соответственно. Также он имеет приватное поле next_id для генерации уникальных идентификаторов таймеров.</p>
+<p >Функции класса <a class="el" href="classTimerManager.html">TimerManager</a>:</p><ul>
+<li>unsigned int <a class="el" href="classTimerManager.html#ae73c759756906d996dd9dfa145dd2700">timeout(std::function&lt;void()&gt; func, int ms)</a>: Устанавливает таймер с заданной функцией и временем в миллисекундах.</li>
+<li>void <a class="el" href="classTimerManager.html#a12ffbdd981cd264bb6b6548a988a828d">unitimeout(unsigned int id)</a>: Отменяет таймер с указанным идентификатором.</li>
+<li>int <a class="el" href="classTimerManager.html#a8531f63d4711642f24c297fe8988d283">tselect(int maxpl, fd_set *re, fd_set *we, fd_set *ee)</a>: Выполняет выборку событий ввода-вывода (I/O) с использованием таймеров.</li>
+</ul>
+<p >Пример использования: </p><div class="fragment"><div class="line"><a class="code hl_class" href="classTimerManager.html">TimerManager</a> timerManager; </div>
+<div class="line"><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timerId = timerManager.<a class="code hl_function" href="classTimerManager.html#ae73c759756906d996dd9dfa145dd2700">timeout</a>([](){ </div>
+<div class="line">    <span class="comment">// Код, который нужно выполнить по истечении времени </span></div>
+<div class="line">}, 1000); <span class="comment">// Устанавливаем таймер на 1 секунду </span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Отменяем таймер </span></div>
+<div class="line">timerManager.<a class="code hl_function" href="classTimerManager.html#a12ffbdd981cd264bb6b6548a988a828d">unitimeout</a>(timerId); </div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Выполняем выборку событий I/O с использованием таймеров </span></div>
+<div class="line"><span class="keywordtype">int</span> maxpl = ...; <span class="comment">// Максимальное значение файлового дескриптора </span></div>
+<div class="line">fd_set re, we, ee; </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_enumeration" href="serverx_8h.html#a937d4dd628a8858b443a399410d2600b">result</a> = timerManager.<a class="code hl_function" href="classTimerManager.html#a8531f63d4711642f24c297fe8988d283">tselect</a>(maxpl, &amp;re, &amp;we, &amp;ee); </div>
+<div class="ttc" id="aclassTimerManager_html"><div class="ttname"><a href="classTimerManager.html">TimerManager</a></div><div class="ttdef"><b>Definition:</b> timemanager.h:47</div></div>
+<div class="ttc" id="aclassTimerManager_html_a12ffbdd981cd264bb6b6548a988a828d"><div class="ttname"><a href="classTimerManager.html#a12ffbdd981cd264bb6b6548a988a828d">TimerManager::unitimeout</a></div><div class="ttdeci">void unitimeout(unsigned int id)</div><div class="ttdef"><b>Definition:</b> timemanager.cpp:54</div></div>
+<div class="ttc" id="aclassTimerManager_html_a8531f63d4711642f24c297fe8988d283"><div class="ttname"><a href="classTimerManager.html#a8531f63d4711642f24c297fe8988d283">TimerManager::tselect</a></div><div class="ttdeci">int tselect(int maxpl, fd_set *re, fd_set *we, fd_set *ee)</div><div class="ttdef"><b>Definition:</b> timemanager.cpp:106</div></div>
+<div class="ttc" id="aclassTimerManager_html_ae73c759756906d996dd9dfa145dd2700"><div class="ttname"><a href="classTimerManager.html#ae73c759756906d996dd9dfa145dd2700">TimerManager::timeout</a></div><div class="ttdeci">unsigned int timeout(std::function&lt; void()&gt; func, int ms)</div><div class="ttdef"><b>Definition:</b> timemanager.cpp:24</div></div>
+<div class="ttc" id="aserverx_8h_html_a937d4dd628a8858b443a399410d2600b"><div class="ttname"><a href="serverx_8h.html#a937d4dd628a8858b443a399410d2600b">result</a></div><div class="ttdeci">result</div><div class="ttdoc">Перечисление для результатов операций.</div><div class="ttdef"><b>Definition:</b> serverx.h:36</div></div>
+</div><!-- fragment --><p >В этом примере создается объект класса <a class="el" href="classTimerManager.html">TimerManager</a> и устанавливается таймер на 1 секунду с заданной функцией. Затем таймер отменяется с использованием идентификатора таймера. Наконец, выполняется выборка событий I/O с использованием таймеров. </p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="ae73c759756906d996dd9dfa145dd2700" name="ae73c759756906d996dd9dfa145dd2700"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae73c759756906d996dd9dfa145dd2700">&#9670;&nbsp;</a></span>timeout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int TimerManager::timeout </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ms</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Устанавливает таймер с заданной функцией и временем в миллисекундах.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">func</td><td>Функция, которая будет выполнена по истечении времени. </td></tr>
+    <tr><td class="paramname">ms</td><td>Время в миллисекундах, через которое должна быть выполнена функция. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Идентификатор установленного таймера.</dd></dl>
+<p>Устанавливает таймер с заданной функцией и временем в миллисекундах.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">func</td><td>Функция, которая будет выполнена по истечении времени. </td></tr>
+    <tr><td class="paramname">ms</td><td>Время в миллисекундах. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Идентификатор установленного таймера.</dd></dl>
+<p>Эта функция выделяет новый таймер из свободного списка, устанавливает заданную функцию и время и добавляет таймер в активный список. Таймеры в активном списке отсортированы по времени, поэтому новый таймер вставляется в правильное место в списке. Функция возвращает идентификатор установленного таймера.</p>
+<p >Пример использования: </p><div class="fragment"><div class="line"><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timerId = <a class="code hl_function" href="classTimerManager.html#ae73c759756906d996dd9dfa145dd2700">timeout</a>([](){</div>
+<div class="line">    <span class="comment">// Код, который нужно выполнить по истечении времени</span></div>
+<div class="line">}, 1000); <span class="comment">// Устанавливаем таймер на 1 секунду</span></div>
+</div><!-- fragment --><p >В этом примере устанавливается таймер на 1 секунду с заданной функцией. Идентификатор таймера сохраняется в переменную timerId для дальнейшего использования. </p>
+
+</div>
+</div>
+<a id="a8531f63d4711642f24c297fe8988d283" name="a8531f63d4711642f24c297fe8988d283"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8531f63d4711642f24c297fe8988d283">&#9670;&nbsp;</a></span>tselect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TimerManager::tselect </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>maxpl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fd_set *&#160;</td>
+          <td class="paramname"><em>re</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fd_set *&#160;</td>
+          <td class="paramname"><em>we</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fd_set *&#160;</td>
+          <td class="paramname"><em>ee</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Выполняет выборку событий ввода-вывода (I/O) с использованием таймеров.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maxpl</td><td>Максимальное значение файлового дескриптора. </td></tr>
+    <tr><td class="paramname">re</td><td>Маска набора дескрипторов на чтение. </td></tr>
+    <tr><td class="paramname">we</td><td>Маска набора дескрипторов на запись. </td></tr>
+    <tr><td class="paramname">ee</td><td>Маска набора дескрипторов на ошибку. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Результат выполнения функции <a class="el" href="classTimerManager.html#a8531f63d4711642f24c297fe8988d283">tselect()</a>.</dd></dl>
+<p>Выполняет выборку событий ввода-вывода (I/O) с использованием таймеров.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maxpl</td><td>Максимальное значение файлового дескриптора. </td></tr>
+    <tr><td class="paramname">re</td><td>Указатель на набор файловых дескрипторов, доступных для чтения. </td></tr>
+    <tr><td class="paramname">we</td><td>Указатель на набор файловых дескрипторов, доступных для записи. </td></tr>
+    <tr><td class="paramname">ee</td><td>Указатель на набор файловых дескрипторов, доступных для исключений. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество готовых файловых дескрипторов, -1 в случае ошибки.</dd></dl>
+<p>Эта функция выполняет выборку событий ввода-вывода (I/O) с использованием таймеров. Она использует функцию select для ожидания готовности файловых дескрипторов к чтению, записи или обнаружению исключений. При наступлении просроченного таймера, функция выполняет соответствующую функцию, связанную с таймером. Функция возвращает количество готовых файловых дескрипторов или -1 в случае ошибки.</p>
+<p >Пример использования: </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> maxpl = ...; <span class="comment">// Максимальное значение файлового дескриптора</span></div>
+<div class="line">fd_set re, we, ee;</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_enumeration" href="serverx_8h.html#a937d4dd628a8858b443a399410d2600b">result</a> = <a class="code hl_function" href="classTimerManager.html#a8531f63d4711642f24c297fe8988d283">tselect</a>(maxpl, &amp;re, &amp;we, &amp;ee);</div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_enumeration" href="serverx_8h.html#a937d4dd628a8858b443a399410d2600b">result</a> &gt; 0) {</div>
+<div class="line">    <span class="comment">// Обработка готовых файловых дескрипторов</span></div>
+<div class="line">} <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_enumeration" href="serverx_8h.html#a937d4dd628a8858b443a399410d2600b">result</a> == 0) {</div>
+<div class="line">    <span class="comment">// Нет готовых файловых дескрипторов</span></div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    <span class="comment">// Ошибка</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><p >В этом примере функция tselect выполняет выборку событий I/O с использованием таймеров для максимального значения файлового дескриптора maxpl. После выполнения функции, результат сохраняется в переменную result, и затем проверяется для определения наличия готовых файловых дескрипторов или возникновения ошибки. Пользователь может передать наборы файловых дескрипторов re, we и ee для указания интересующих событий. </p>
+
+</div>
+</div>
+<a id="a12ffbdd981cd264bb6b6548a988a828d" name="a12ffbdd981cd264bb6b6548a988a828d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12ffbdd981cd264bb6b6548a988a828d">&#9670;&nbsp;</a></span>unitimeout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TimerManager::unitimeout </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Отменяет таймер с указанным идентификатором.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Идентификатор таймера, который нужно отменить. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Отсутствует.</dd></dl>
+<p>Отменяет таймер с указанным идентификатором.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Идентификатор таймера.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Эта функция ищет таймер с указанным идентификатором в активном списке и удаляет его. Удаленный таймер добавляется в свободный список для повторного использования. Если таймер с указанным идентификатором не найден, выбрасывается исключение std::runtime_error.</p>
+<p >Пример использования: </p><div class="fragment"><div class="line"><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timerId = ...; <span class="comment">// Идентификатор устанавливаемого таймера</span></div>
+<div class="line"><a class="code hl_function" href="classTimerManager.html#a12ffbdd981cd264bb6b6548a988a828d">unitimeout</a>(timerId); <span class="comment">// Отменяем таймер</span></div>
+</div><!-- fragment --><p >В этом примере отменяется таймер с указанным идентификатором. Пользователь должен передать корректный идентификатор таймера для отмены. Если таймер с указанным идентификатором не найден, будет выброшено исключение std::runtime_error. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>/home/yvzayets/Документы/GitHub/server_thread-pattern-/<a class="el" href="timemanager_8h_source.html">timemanager.h</a></li>
+<li>/home/yvzayets/Документы/GitHub/server_thread-pattern-/timemanager.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>
